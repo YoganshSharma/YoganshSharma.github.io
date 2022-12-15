@@ -1,0 +1,29 @@
+::selection {
+	background: #d3869b;
+}
+
+body {
+	background: #282828;
+	color: #ebdbb2;
+	font-family: monospace, monospace;
+	margin: auto;
+}
+
+header {
+	margin: 3%;
+	text-align: center;
+	border: 2px solid aliceblue;
+	border-radius: 10px;
+}
+
+main {
+	max-width: 38rem;
+	padding: 2rem;
+}
+
+a,
+a:active,
+a:visited {
+	color: #b16286;
+	text-decoration: none;
+}
