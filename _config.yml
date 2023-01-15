@@ -1,0 +1,5 @@
+markdown: kramdown
+kramdown:
+  input: GFM
+  # https://github.com/jekyll/jekyll/pull...
+  syntax_highlighter: rouge
