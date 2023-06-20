@@ -14,8 +14,10 @@
 <body>
 	<header>
 
-		<h1>Yogansh's website</h1>
-		<hr />
+		<h1>Yogansh Sharma</h1>
+		<blockquote id = "randquote">
+		</blockquote>
+		<hr/>
 
 		{% include navigation.html %}
 	</header>
@@ -23,6 +25,20 @@
 	<footer>
 
 	</footer>
+	<script>
+		fetch("assets/quotes.json")
+		  .then(response => response.json())
+		  .then(quotes => {
+			const quote = quotes[ Math.round((quotes.length-1)*Math.random()) ];
+			if (quote!=null) {
+				let author = "";
+				if (quote.author!=null) {
+					author = " --" + quote.author
+				}
+				document.getElementById("randquote").innerText = "\"" + quote.content + "\"" + author;
+			}
+		  })
+	</script>
 
 </body>
 

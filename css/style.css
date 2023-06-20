@@ -54,9 +54,8 @@ html {
 body {
 	background: var(--bg);
 	background-size: 50%;
-
 	color: var(--fg1);
-	margin: auto;
+	margin: 5% 20%;
 }
 
 @keyframes fade {
@@ -79,6 +78,10 @@ header {
 	border: 2px solid aliceblue;
 	border-radius: 10px;
 
+}
+
+#randquote {
+	font-size: 0.8em;
 }
 
 hr {
@@ -113,7 +116,7 @@ p {
 a,
 a:active,
 a:visited {
-	color: var(--purple-dim);
+	color: var(--purple);
 	text-decoration: none;
 }
 
@@ -135,7 +138,7 @@ a:hover {
 
 
 ul {
-	list-style-type: disc;
+	list-style-type: none;
 	padding-left: 4rem;
 	margin-bottom: 1rem;
 }
