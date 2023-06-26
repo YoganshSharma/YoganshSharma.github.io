@@ -56,7 +56,16 @@ body {
 	background-size: 50%;
 	color: var(--fg1);
 	margin: 5% 20%;
+    max-width: 80%;
 }
+
+@media only screen and (max-width: 720px) {
+        body {
+            max-width: 90%;
+            margin: 5% 10%;
+        }
+}
+
 
 @keyframes fade {
 	from {
@@ -94,6 +103,7 @@ hr {
 
 div {
 	margin: 10px;
+    padding-left: 0.4rem;
 	margin-top: 2rem;
 }
 
@@ -103,13 +113,15 @@ body *:nth-child(n+1) {
 	animation-fill-mode: both;
 }
 
+h2 {
+    text-align: center;
+}
 
 small {
 	font-size: smaller;
 }
 
 p {
-	padding-left: 1rem;
 	margin-bottom: 1rem;
 }
 
@@ -139,7 +151,6 @@ a:hover {
 
 ul {
 	list-style-type: none;
-	padding-left: 2rem;
 	margin-bottom: 1rem;
 }
 
@@ -160,6 +171,7 @@ ul {
 	width: 100%;
 	height: 100%;
 }
+
 
 pre.highlight {
 	overflow: scroll;
