@@ -130,6 +130,18 @@ template = "slides.html"
 </section>
 
 <section>
+<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%;">
+        <div style="height: 60vh; width: 100%; display: flex; justify-content: center;">
+            <img src="/assets/glac2.png" 
+                 style="max-height: 100%; max-width: 100%; object-fit: contain; border: 1px solid #6272a4; border-radius: 8px;">
+        </div>
+        <p class="img-caption" style="margin-top: 10px; font-size: 0.5em;">
+            Figure 2: Flow Diagram of the methodology used to extract glacial lake outlines.
+        </p>
+    </div>
+</section>
+
+<section>
     <h3>2022 Inventory Results</h3>
     <div class="metric-box">
         <h4>Total Lakes: 31,698</h4>
