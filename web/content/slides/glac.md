@@ -5,9 +5,10 @@ template = "slides.html"
 +++
 <section style="text-align: center;" data-background-image="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=2070">
     <h2>Automated Satellite-Based Glacial Lake Inventory and Change Detection in High Mountain Asia</h2>
-    <p><strong>Ravindra Kumar & Saurabh Vijay</strong><br>
-    <span style="font-size: 0.8em;">Indian Institute of Technology, Roorkee</span></p>
     <p style="font-size: 0.6em;">Published in: <em>Scientific Reports</em> (2026) </p>
+  <p style="font-size: 0.5em;">
+    <strong>Presenter:</strong> Yogansh Sharma<br>
+  </p>
     <aside class="notes">
         Good morning. Today I will present our study on the automated inventorying and change detection of glacial lakes in High Mountain Asia (HMA).
         This work addresses the critical need for high-resolution monitoring of glacial lakes, which serve as vital water resources but also pose significant Glacial Lake Outburst Flood (GLOF) risks.
