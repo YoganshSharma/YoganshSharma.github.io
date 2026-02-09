@@ -1,0 +1,93 @@
+{%- import 'macros/seo.html' as macros_seo %}
+{%- import "macros/macros.html" as macros %}
+{# Load current language i18n data from .toml files in user's '/i18n' folder, use theme as fallback. #}
+{%- set i18n = load_data(path="i18n/" ~ lang ~ '.toml', required=false) -%}
+{%- if not i18n -%}{%- set i18n = load_data(path="themes/abridge/i18n/" ~ lang ~ ".toml", required=false) -%}{%- endif %}
+
+{%- set uglyurls = config.extra.uglyurls | default(value=false) -%}
+{%- if config.extra.search_library %}{%- if config.extra.search_library == "offline" %}{% set uglyurls = true %}{% endif %}{% endif %}
+<!DOCTYPE html>
+<html lang="{%- if lang != config.default_language %}{{ lang }}{% else %}{{ config.extra.language_code | default(value=lang) }}{% endif %}">
+<head>
+  {%- include "partials/head.html" %}
+
+  {#- SEO: title, description, etc #}
+  {%- block seo %}
+    {%- if config.extra.title_separator %}
+      {%- set title_separator = " " ~ config.extra.title_separator ~ " " -%}
+    {%- else %}
+      {%- set title_separator = " | " -%}
+    {%- endif %}
+  {%- set title_addition = "" %}
+  {%- if page.title and config.title %}
+    {%- set title = page.title %}
+    {%- set title_addition = title_separator ~ config.title %}
+  {%- elif page.title %}
+    {%- set title = page.title %}
+  {%- else %}
+    {%- set title = config.title %}
+  {%- endif %}
+
+  {%- if page.description %}
+    {%- set description = page.description %}
+  {%- else %}
+    {%- set description = config.description %}
+  {%- endif %}
+  {%- set created_time = page.date %}
+  {%- set updated_time = page.updated %}
+  {%- if current_section %}
+    {%- set page_section = current_section %}
+  {%- else %}
+    {%- set page_section = "" %}
+  {%- endif %}
+
+  {{- macros_seo::seo(config=config, title=title, title_addition=title_addition, description=description, type="article", is_page=true, created_time=created_time, updated_time=updated_time, page_section=page_section) }}
+  {%- endblock seo %}
+
+  {%- block comments_init %}
+  {%- endblock comments_init %}
+
+  {%- include "partials/head_js.html" %}
+
+  <link rel="stylesheet" href="/reveal/dist/reset.css">
+  <link rel="stylesheet" href="/reveal/dist/reveal.css">
+  <link rel="stylesheet" href="/reveal/dist/theme/dracula.css">
+
+  <!-- Theme used for syntax highlighted code -->
+  <link rel="stylesheet" href="/reveal/plugin/highlight/monokai.css">
+  <style>
+      ul {
+        font-size: 0.8em;
+      }
+      .img-caption { font-size: 0.4em; text-align: center;  margin-top: 5px; }
+  </style>
+
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+        {{ page.content | safe }}
+    </div>
+  </div>
+
+  <script src="/reveal/dist/reveal.js"></script>
+  <script src="/reveal/plugin/notes/notes.js"></script>
+  <script src="/reveal/plugin/markdown/markdown.js"></script>
+  <script src="/reveal/plugin/highlight/highlight.js"></script>
+  <script src="/reveal/plugin/math/math.js"></script>
+  <script>
+    // More info about initialization & config:
+    // - https://revealjs.com/initialization/
+    // - https://revealjs.com/config/
+    Reveal.initialize({
+      hash: true,
+      showHiddenSlides: true,
+
+      slideNumber: 'c/t',
+
+      // Learn about plugins: https://revealjs.com/plugins/
+      plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+{# slides_list.html or other template extending base.html #}
+{% extends "base.html" %}
+
+{% block seo %}
+  {{ super() }}
+  {# Additional custom SEO handling can be added here if needed #}
+{% endblock seo %}
+
+{% block header %}
+  {{ super() }}
+  {# Additional header customization here if needed #}
+{% endblock header %}
+
+{% block content %}
+  <h1>{{ section.title }}</h1>
+
+  <ul>
+    {% for page in paginator.pages %}
+      <li><a href="{{ page.permalink }}">{{ page.title }}</a></li>
+    {% endfor %}
+  </ul>
+
+  <div class="pagination">
+    {% if not paginator.is_first %}
+      <a href="{{ paginator.previous_page_url }}">Previous</a>
+    {% endif %}
+    Page {{ paginator.current_page }} of {{ paginator.num_pages }}
+    {% if not paginator.is_last %}
+      <a href="{{ paginator.next_page_url }}">Next</a>
+    {% endif %}
+  </div>
+{% endblock content %}
+
+{% block footer %}
+  {{ super() }}
+  {# Additional footer content if needed #}
+{% endblock footer %}
+
+{% block gotop %}
+  {{ super() }}
+{% endblock gotop %}
+
