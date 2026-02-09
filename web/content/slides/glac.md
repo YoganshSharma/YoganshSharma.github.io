@@ -1,6 +1,6 @@
 +++
 title = "Automated Satellite-Based Glacial Lake Inventory and Change Detection in High Mountain Asia"
-date = 2025-09-05
+date = 2026-02-03
 template = "slides.html"
 +++
 <section style="text-align: center;" data-background-image="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=2070">
