@@ -81,7 +81,6 @@ template = "slides.html"
     <div style="display: flex; gap: 10px;">
         <div style="flex: 1;">
             <img src="assets/chamg.png" style="width: 100%; border-radius: 10px;">
-            <p style="font-size: 0.4em;">Pre- vs Post-event Visual (Sentinel-2)</p>
         </div>
         <div style="flex: 1; font-size: 0.7em;">
             <ul>
