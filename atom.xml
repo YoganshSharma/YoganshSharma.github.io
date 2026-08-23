@@ -1,0 +1,1373 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>Yogansh</title>
+    <subtitle>Yogansh&#x27;s Personal Space on Internet</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://yoganshsharma.github.io/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://yoganshsharma.github.io"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2026-04-09T00:00:00+00:00</updated>
+    <id>https://yoganshsharma.github.io/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Unsupervised Hazard Detection in High Mountain Asia using Multi-Source Foundation Models</title>
+        <published>2026-04-09T00:00:00+00:00</published>
+        <updated>2026-04-09T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://yoganshsharma.github.io/slides/cham/"/>
+        <id>https://yoganshsharma.github.io/slides/cham/</id>
+        
+        <content type="html" xml:base="https://yoganshsharma.github.io/slides/cham/">&lt;section style=&quot;text-align: center;&quot; data-background-image=&quot;https:&#x2F;&#x2F;images.unsplash.com&#x2F;photo-1589820296156-2454bb8a6ad1?q=80&amp;w=2070&quot;&gt;
+    &lt;div style=&quot;background: rgba(0,0,0,0.6); padding: 20px; border-radius: 15px;&quot;&gt;
+        &lt;h2 style=&quot;color: white;&quot;&gt;Unsupervised Hazard Detection in High Mountain Asia&lt;&#x2F;h2&gt;
+        &lt;h4 style=&quot;color: #bd93f9;&quot;&gt;Leveraging AlphaEarth Foundation (AEF) Embeddings&lt;&#x2F;h4&gt;
+        &lt;p style=&quot;font-size: 0.6em; color: white;&quot;&gt;Bachelor of Technology (BTP) Project Presentation&lt;&#x2F;p&gt;
+        &lt;p style=&quot;font-size: 0.5em; color: white;&quot;&gt;
+            &lt;strong&gt;Presenter:&lt;&#x2F;strong&gt; Yogansh Sharma&lt;br&gt;
+        &lt;&#x2F;p&gt;
+    &lt;&#x2F;div&gt;
+    &lt;aside class=&quot;notes&quot;&gt;
+        Good morning. Today I am presenting my BTP project on unsupervised hazard detection in High Mountain Asia. 
+        Traditional methods rely on manual labeling or simple spectral indices. This project explores a new frontier: using multi-dimensional foundation models to detect catastrophic geomorphic changes without prior training data.
+    &lt;&#x2F;aside&gt;
+&lt;&#x2F;section&gt;
+&lt;section&gt;
+    &lt;h3&gt;The Challenge: Cryospheric Hazards in HMA&lt;&#x2F;h3&gt;
+    &lt;ul style=&quot;font-size: 0.8em;&quot;&gt;
+        &lt;li&gt;&lt;strong&gt;Geographic Context:&lt;&#x2F;strong&gt; High Mountain Asia (HMA) is the &quot;Third Pole,&quot; highly sensitive to climate shifts.&lt;&#x2F;li&gt;
+        &lt;li&gt;&lt;strong&gt;The Problem:&lt;&#x2F;strong&gt; Increasing frequency of rock-ice avalanches and GLOFs (e.g., Chamoli 2021).&lt;&#x2F;li&gt;
+        &lt;li&gt;&lt;strong&gt;Technical Bottlenecks:&lt;&#x2F;strong&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;em&gt;Cloud Cover:&lt;&#x2F;em&gt; Optical sensors (Sentinel-2) are often blinded.&lt;&#x2F;li&gt;
+                &lt;li&gt;&lt;em&gt;Label Scarcity:&lt;&#x2F;em&gt; Unsupervised methods are needed because labeled disaster data is rare.&lt;&#x2F;li&gt;
+                &lt;li&gt;&lt;em&gt;Complexity:&lt;&#x2F;em&gt; Hazards involve snow, ice, and debris, making simple pixel-based detection unreliable.&lt;&#x2F;li&gt;
+            &lt;&#x2F;ul&gt;
+        &lt;&#x2F;li&gt;
+    &lt;&#x2F;ul&gt;
+    &lt;aside class=&quot;notes&quot;&gt;
+        HMA is a disaster hotspot. The main issue is that by the time we have enough labeled data to train a traditional AI model, the disaster has already passed. Furthermore, the constant cloud cover in the Himalayas makes optical monitoring difficult. We need a method that is unsupervised and utilizes multi-sensor data.
+    &lt;&#x2F;aside&gt;
+&lt;&#x2F;section&gt;
+&lt;section&gt;
+    &lt;h3&gt;Proposed Solution: AEF Embeddings&lt;&#x2F;h3&gt;
+    &lt;div style=&quot;display: flex; gap: 20px; font-size: 0.8em;&quot;&gt;
+        &lt;div style=&quot;flex: 1;&quot;&gt;
+            &lt;strong&gt;What is AEF?&lt;&#x2F;strong&gt;
+            &lt;p&gt;AlphaEarth Foundations is a self-supervised model trained on billions of pixels of Sentinel-1 (Radar) and Sentinel-2 (Optical) data.&lt;&#x2F;p&gt;
+        &lt;&#x2F;div&gt;
+        &lt;div style=&quot;flex: 1;&quot;&gt;
+            &lt;strong&gt;Why Embeddings?&lt;&#x2F;strong&gt;
+            &lt;ul&gt;
+                &lt;li&gt;Compressed 64-band representation of the landscape.&lt;&#x2F;li&gt;
+                &lt;li&gt;Captures &quot;texture&quot; and &quot;physics&quot; beyond visible light.&lt;&#x2F;li&gt;
+                &lt;li&gt;Enables mathematical comparison of surface states.&lt;&#x2F;li&gt;
+            &lt;&#x2F;ul&gt;
+        &lt;&#x2F;div&gt;
+    &lt;&#x2F;div&gt;
+    &lt;aside class=&quot;notes&quot;&gt;
+        Instead of looking at raw RGB pixels, we use AEF Embeddings. These are 64-dimensional vectors that represent each 10-meter patch of earth. Because they include Radar data, they can &quot;see&quot; surface texture through clouds and shadows, providing a much more robust signature of the terrain than a standard photo.
+    &lt;&#x2F;aside&gt;
+&lt;&#x2F;section&gt;
+&lt;section&gt;
+    &lt;h3&gt;Methodology: Embedding Deviation&lt;&#x2F;h3&gt;
+    &lt;p style=&quot;font-size: 0.7em;&quot;&gt;We treat hazard detection as an anomaly detection problem in latent space.&lt;&#x2F;p&gt;
+    &lt;ol style=&quot;font-size: 0.7em;&quot;&gt;
+        &lt;li&gt;&lt;strong&gt;Vector Normalization:&lt;&#x2F;strong&gt; Project 64-band embeddings onto a unit sphere to remove brightness bias.
+            &lt;br&gt;$\hat{v} = v &#x2F; \|v\|$
+        &lt;&#x2F;li&gt;
+        &lt;li&gt;&lt;strong&gt;Cosine Similarity:&lt;&#x2F;strong&gt; Calculate the dot product between Pre-event (2020) and Post-event (2021) vectors.&lt;&#x2F;li&gt;
+        &lt;li&gt;&lt;strong&gt;Anomaly Score:&lt;&#x2F;strong&gt; Map similarity to a 0–1 scale.
+            &lt;br&gt;$Score = (Dot \times -0.5) + 0.5$
+        &lt;&#x2F;li&gt;
+        &lt;li&gt;&lt;strong&gt;Thresholding:&lt;&#x2F;strong&gt; Identify the hazard mask using a statistical &quot;long-tail&quot; threshold ($T \approx 0.2$).&lt;&#x2F;li&gt;
+    &lt;&#x2F;ol&gt;
+    &lt;aside class=&quot;notes&quot;&gt;
+        The math is straightforward but powerful. We normalize the vectors to focus on &quot;change in nature&quot; rather than &quot;change in light.&quot; By calculating the cosine similarity between two years, we can pinpoint exactly where the land&#x27;s fundamental signature has shifted. High deviation equals a potential hazard.
+    &lt;&#x2F;aside&gt;
+&lt;&#x2F;section&gt;
+&lt;section&gt;
+    &lt;h3&gt;Case Study: Chamoli Disaster (2021)&lt;&#x2F;h3&gt;
+    &lt;div style=&quot;display: flex; gap: 10px;&quot;&gt;
+        &lt;div style=&quot;flex: 1;&quot;&gt;
+            &lt;img src=&quot;assets&#x2F;chamg.png&quot; style=&quot;width: 100%; border-radius: 10px;&quot;&gt;
+        &lt;&#x2F;div&gt;
+        &lt;div style=&quot;flex: 1; font-size: 0.7em;&quot;&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;strong&gt;Event:&lt;&#x2F;strong&gt; Rock-ice avalanche and flash flood.&lt;&#x2F;li&gt;
+                &lt;li&gt;&lt;strong&gt;Validation:&lt;&#x2F;strong&gt; Compared AEF results against the Shugar et al. (Science, 2021) inventory.&lt;&#x2F;li&gt;
+            &lt;&#x2F;ul&gt;
+        &lt;&#x2F;div&gt;
+    &lt;&#x2F;div&gt;
+    &lt;aside class=&quot;notes&quot;&gt;
+        We validated this using the 2021 Chamoli event. By comparing our unsupervised mask with the professional inventory published in Science magazine, we can quantify our accuracy. Our model successfully captured the main avalanche track and the debris deposits in the valley.
+    &lt;&#x2F;aside&gt;
+&lt;&#x2F;section&gt;
+&lt;section&gt;
+    &lt;h3&gt;Statistical Justification&lt;&#x2F;h3&gt;
+    &lt;div style=&quot;display: flex; align-items: center; justify-content: center;&quot;&gt;
+        &lt;div style=&quot;width: 60%;&quot;&gt;
+    &lt;img src=&quot;&#x2F;assets&#x2F;histogram.png&quot;&gt;
+                    &lt;p class=&quot;img-caption&quot;&gt;Figure 1: Geographic scope of the HMA study area.&lt;&#x2F;p&gt;
+        &lt;&#x2F;div&gt;
+    &lt;&#x2F;div&gt;
+    &lt;p style=&quot;font-size: 0.6em; text-align: center;&quot;&gt;Distribution of Anomaly Scores (Log Scale). The red line indicates our 0.2 Threshold.&lt;&#x2F;p&gt;
+    &lt;aside class=&quot;notes&quot;&gt;
+        This histogram is the scientific heart of the project. It shows that most of the valley remains stable (the big spike on the left). The &quot;long tail&quot; on the right represents the rare, high-energy changes—the hazard. Choosing our threshold here ensures we filter out noise while keeping the signal.
+    &lt;&#x2F;aside&gt;
+&lt;&#x2F;section&gt;
+&lt;section&gt;
+&lt;h3&gt;Topographic Correlation Analysis&lt;&#x2F;h3&gt;
+    &lt;div style=&quot;display: flex; gap: 20px; font-size: 0.75em;&quot;&gt;
+        &lt;div style=&quot;flex: 1.2;&quot;&gt;
+            &lt;strong&gt;Data Source:&lt;&#x2F;strong&gt;
+            &lt;p&gt;NASA SRTM (Shuttle Radar Topography Mission) Digital Elevation Model at &lt;strong&gt;30m Resolution&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+            &lt;hr&gt;
+            &lt;strong&gt;Geomorphic Validation:&lt;&#x2F;strong&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;strong&gt;Slope Derivation:&lt;&#x2F;strong&gt; Calculating terrain gradient to correlate with anomaly locations.&lt;&#x2F;li&gt;
+                &lt;li&gt;&lt;strong&gt;Physical Consistency:&lt;&#x2F;strong&gt; Confirms that anomalies align with gravity-driven mass movement thresholds ($&gt;25^\circ$).&lt;&#x2F;li&gt;
+            &lt;&#x2F;ul&gt;
+        &lt;&#x2F;div&gt;
+    &lt;&#x2F;div&gt;
+    &lt;aside class=&quot;notes&quot;&gt;
+        For topographic validation, we utilized the NASA SRTM 30m Digital Elevation Model. By deriving the slope from this dataset, we were able to filter our anomaly results. Since geomorphic hazards like the Chamoli avalanche are driven by gravity, we expect them to occur on steep terrain. Our results confirmed a high correlation, with most detected anomalies occurring on slopes greater than 25 degrees, effectively filtering out noise from flat agricultural land.
+    &lt;&#x2F;aside&gt;
+&lt;&#x2F;section&gt;
+&lt;section&gt;
+    &lt;h3&gt;Implementation Stack&lt;&#x2F;h3&gt;
+    &lt;div style=&quot;display: grid; grid-template-columns: 1fr 1fr; gap: 20px; font-size: 0.7em;&quot;&gt;
+        &lt;div style=&quot;padding: 10px; border: 1px solid #6272a4;&quot;&gt;
+            &lt;strong&gt;Backend&lt;&#x2F;strong&gt;
+            &lt;ul&gt;
+                &lt;li&gt;Google Earth Engine (GEE)&lt;&#x2F;li&gt;
+                &lt;li&gt;AlphaEarth Foundation API&lt;&#x2F;li&gt;
+                &lt;li&gt;Python (Colab&#x2F;Jupyter)&lt;&#x2F;li&gt;
+            &lt;&#x2F;ul&gt;
+        &lt;&#x2F;div&gt;
+        &lt;div style=&quot;padding: 10px; border: 1px solid #6272a4;&quot;&gt;
+            &lt;strong&gt;Frontend &#x2F; Visualization&lt;&#x2F;strong&gt;
+            &lt;ul&gt;
+                &lt;li&gt;Leafmap (MapLibreGL backend)&lt;&#x2F;li&gt;
+                &lt;li&gt;Geemap (Tile rendering)&lt;&#x2F;li&gt;
+                &lt;li&gt;Matplotlib (Statistical Analysis)&lt;&#x2F;li&gt;
+            &lt;&#x2F;ul&gt;
+        &lt;&#x2F;div&gt;
+    &lt;&#x2F;div&gt;
+    &lt;aside class=&quot;notes&quot;&gt;
+        The system is built entirely on open-source cloud infrastructure. We use Google Earth Engine for the massive data processing and Leafmap with MapLibre for the high-performance vector visualization.
+    &lt;&#x2F;aside&gt;
+&lt;&#x2F;section&gt;
+&lt;section&gt;
+    &lt;h3&gt;Unsupervised Classification Plan&lt;&#x2F;h3&gt;
+    &lt;div style=&quot;display: flex; gap: 20px; font-size: 0.75em;&quot;&gt;
+        &lt;div style=&quot;flex: 1;&quot;&gt;
+            &lt;strong&gt;Objective:&lt;&#x2F;strong&gt;
+            &lt;p&gt;To segment the HMA landscape into distinct geomorphic clusters (Snow, Rock, Water, Debris) using the latent features of the foundation model.&lt;&#x2F;p&gt;
+            &lt;hr&gt;
+            &lt;strong&gt;Algorithm: K-Means Clustering&lt;&#x2F;strong&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;strong&gt;Input:&lt;&#x2F;strong&gt; 64-band AEF Embedding (Post-event).&lt;&#x2F;li&gt;
+                &lt;li&gt;&lt;strong&gt;Sampling:&lt;&#x2F;strong&gt; 5,000 random pixels for cluster training.&lt;&#x2F;li&gt;
+                &lt;li&gt;&lt;strong&gt;K-Value Cluster labeling:&lt;&#x2F;strong&gt; 5 clusters (optimal for glacial environments).&lt;&#x2F;li&gt;
+            &lt;&#x2F;ul&gt;
+        &lt;&#x2F;div&gt;
+    &lt;&#x2F;div&gt;
+    &lt;aside class=&quot;notes&quot;&gt;
+        Beyond just measuring change, we implemented an unsupervised classification plan using K-Means clustering. By grouping the 64-band embeddings into 5 distinct physical clusters, we can provide context to our hazards. For example, we can prove that a high anomaly score is specifically occurring where the land has transitioned into a &quot;Debris&quot; class, rather than just a shadow or a water body.
+    &lt;&#x2F;aside&gt;
+&lt;&#x2F;section&gt;
+&lt;section&gt;
+    &lt;h3&gt;Supervised Validation: Random Forest Approach&lt;&#x2F;h3&gt;
+    &lt;div style=&quot;display: flex; gap: 20px; font-size: 0.7em;&quot;&gt;
+        &lt;div style=&quot;flex: 1;&quot;&gt;
+            &lt;strong&gt;The Strategy:&lt;&#x2F;strong&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;strong&gt;Algorithm:&lt;&#x2F;strong&gt; Random Forest .&lt;&#x2F;li&gt;
+                &lt;li&gt;&lt;strong&gt;Training:&lt;&#x2F;strong&gt; Multi-class labeling (Snow, Rock, Water, Hazard Debris).&lt;&#x2F;li&gt;
+                &lt;li&gt;&lt;strong&gt;Verification:&lt;&#x2F;strong&gt; Cross-referencing the &quot;Hazard Debris&quot; class with the &quot;Anomaly Score&quot; from the AEF model.&lt;&#x2F;li&gt;
+            &lt;&#x2F;ul&gt;
+        &lt;&#x2F;div&gt;
+        &lt;div style=&quot;flex: 1;&quot;&gt;
+            &lt;strong&gt;Importance for Thesis:&lt;&#x2F;strong&gt;
+            &lt;ol&gt;
+                &lt;li&gt;Provides &lt;strong&gt;Quantitative Accuracy&lt;&#x2F;strong&gt; via Confusion Matrix.&lt;&#x2F;li&gt;
+                &lt;li&gt;Differentiates between types of geomorphic change (e.g., distinguishing a new lake from a new landslide).&lt;&#x2F;li&gt;
+                &lt;li&gt;Validates the &lt;strong&gt;unsupervised framework&lt;&#x2F;strong&gt; as a reliable proxy for expert-labeled maps.&lt;&#x2F;li&gt;
+            &lt;&#x2F;ol&gt;
+        &lt;&#x2F;div&gt;
+    &lt;&#x2F;div&gt;
+    &lt;aside class=&quot;notes&quot;&gt;
+        To finalize our validation, we implemented a supervised Random Forest classifier. While the unsupervised model is our primary focus for &quot;monitoring,&quot; the supervised map acts as our &quot;truth.&quot; If the supervised model confirms that our high-anomaly zones are indeed &quot;Debris,&quot; we have successfully closed the loop on our research objective.
+    &lt;&#x2F;aside&gt;
+&lt;&#x2F;section&gt;
+&lt;section&gt;
+    &lt;h3&gt;Conclusions &amp; Future Scope&lt;&#x2F;h3&gt;
+    &lt;ul style=&quot;font-size: 0.8em;&quot;&gt;
+        &lt;li&gt;&lt;strong&gt;Main Result:&lt;&#x2F;strong&gt; Successfully developed a fully unsupervised pipeline for hazard mapping in HMA.&lt;&#x2F;li&gt;
+        &lt;li&gt;&lt;strong&gt;Advantage:&lt;&#x2F;strong&gt; Eliminates the need for manual training labels and works across diverse terrain types.&lt;&#x2F;li&gt;
+    &lt;&#x2F;ul&gt;
+    &lt;aside class=&quot;notes&quot;&gt;
+        In conclusion, this project proves that foundation models can replace manual labor in disaster management. Moving forward, I hope to scale this system to provide real-time monitoring for the entire Hindu Kush-Himalaya range.
+    &lt;&#x2F;aside&gt;
+&lt;&#x2F;section&gt;
+&lt;section style=&quot;text-align: center;&quot;&gt;
+    &lt;h2&gt;Thank You&lt;&#x2F;h2&gt;
+    &lt;div style=&quot;font-size: 0.5em; margin-top: 50px;&quot;&gt;
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;section&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Automated Satellite-Based Glacial Lake Inventory and Change Detection in High Mountain Asia</title>
+        <published>2026-02-03T00:00:00+00:00</published>
+        <updated>2026-02-03T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://yoganshsharma.github.io/slides/glac/"/>
+        <id>https://yoganshsharma.github.io/slides/glac/</id>
+        
+        <content type="html" xml:base="https://yoganshsharma.github.io/slides/glac/">&lt;section style=&quot;text-align: center;&quot; data-background-image=&quot;https:&#x2F;&#x2F;images.unsplash.com&#x2F;photo-1464822759023-fed622ff2c3b?q=80&amp;w=2070&quot;&gt;
+    &lt;h2&gt;Automated Satellite-Based Glacial Lake Inventory and Change Detection in High Mountain Asia&lt;&#x2F;h2&gt;
+    &lt;p style=&quot;font-size: 0.6em;&quot;&gt;Published in: &lt;em&gt;Scientific Reports&lt;&#x2F;em&gt; (2026) &lt;&#x2F;p&gt;
+  &lt;p style=&quot;font-size: 0.5em;&quot;&gt;
+    &lt;strong&gt;Presenter:&lt;&#x2F;strong&gt; Yogansh Sharma&lt;br&gt;
+  &lt;&#x2F;p&gt;
+    &lt;aside class=&quot;notes&quot;&gt;
+        Good morning. Today I will present our study on the automated inventorying and change detection of glacial lakes in High Mountain Asia (HMA).
+        This work addresses the critical need for high-resolution monitoring of glacial lakes, which serve as vital water resources but also pose significant Glacial Lake Outburst Flood (GLOF) risks.
+        Our research introduces a fully automated framework integrating multi-source remote sensing data to map lakes across 15 subregions of HMA, overcoming limitations of manual and semi-automated methods.
+    &lt;&#x2F;aside&gt;
+&lt;&#x2F;section&gt;
+&lt;section&gt;
+    &lt;h3&gt;Introduction &amp; Problem Statement&lt;&#x2F;h3&gt;
+    &lt;ul style=&quot;font-size: 0.8em;&quot;&gt;
+        &lt;li&gt;&lt;strong&gt;Context:&lt;&#x2F;strong&gt; HMA holds the largest volume of glaciers outside polar regions. Climate warming is accelerating glacier retreat and lake expansion.&lt;&#x2F;li&gt;
+        &lt;li&gt;&lt;strong&gt;Hazard:&lt;&#x2F;strong&gt; ~700 GLOF events recorded (1833–2022). Recent events like South Lhonak (2023) affected ~88,000 people.&lt;&#x2F;li&gt;
+        &lt;li&gt;&lt;strong&gt;Current Limitations:&lt;&#x2F;strong&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;em&gt;Manual Mapping:&lt;&#x2F;em&gt; Labor-intensive, subjective.&lt;&#x2F;li&gt;
+                &lt;li&gt;&lt;em&gt;Semi-Automated:&lt;&#x2F;em&gt; Relies on global thresholds (NDWI), struggling with shadows, frozen lakes, and turbidity.&lt;&#x2F;li&gt;
+                &lt;li&gt;&lt;em&gt;Existing Automated:&lt;&#x2F;em&gt; Conservative area thresholds often exclude small, hazardous lakes ($&lt;0.05~km^2$).&lt;&#x2F;li&gt;
+            &lt;&#x2F;ul&gt;
+        &lt;&#x2F;li&gt;
+    &lt;&#x2F;ul&gt;
+    &lt;aside class=&quot;notes&quot;&gt;
+        The motivation for this study is twofold: resource management and disaster mitigation. &lt;&#x2F;br&gt;
+        While glacial lakes are expanding globally, existing monitoring methods have bottlenecks. Manual mapping is too slow for the vast HMA region. Semi-automated methods using spectral indices like NDWI often fail in complex terrain due to mountain shadows and spectral variability of turbid water.&lt;&#x2F;br&gt;
+        Crucially, fully automated methods tend to be &quot;conservative,&quot; setting high area thresholds to avoid false positives. This means they miss smaller lakes, which can still trigger catastrophic debris flows. Our goal was to lower this detection threshold without sacrificing accuracy.&lt;&#x2F;br&gt;
+    &lt;&#x2F;aside&gt;
+&lt;&#x2F;section&gt;
+&lt;section&gt;
+    &lt;h3&gt;Study Area &amp; Data Sources&lt;&#x2F;h3&gt;
+    &lt;div style=&quot;display: flex; gap: 20px;&quot;&gt;
+        &lt;div style=&quot;flex: 1;&quot;&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;strong&gt;Region:&lt;&#x2F;strong&gt; 15 RGI 7.0 subregions (Himalaya, Karakoram, Tien Shan, etc.).&lt;&#x2F;li&gt;
+                &lt;li&gt;&lt;strong&gt;Buffer:&lt;&#x2F;strong&gt; 12.5 km from glacier termini (captures ~72% of distal lakes).&lt;&#x2F;li&gt;
+            &lt;&#x2F;ul&gt;
+        &lt;&#x2F;div&gt;
+        &lt;div style=&quot;flex: 1;&quot;&gt;
+            &lt;small&gt;&lt;strong&gt;Data Stack:&lt;&#x2F;strong&gt;&lt;&#x2F;small&gt;
+            &lt;table style=&quot;font-size: 0.6em; width: 100%;&quot;&gt;
+                &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Optical&lt;&#x2F;strong&gt;&lt;&#x2F;td&gt;&lt;td&gt;Landsat-8 (OLI), Sentinel-2 (MSI)&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+                &lt;tr&gt;&lt;td&gt;&lt;strong&gt;SAR&lt;&#x2F;strong&gt;&lt;&#x2F;td&gt;&lt;td&gt;Sentinel-1 (GRD, C-band)&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+                &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Topography&lt;&#x2F;strong&gt;&lt;&#x2F;td&gt;&lt;td&gt;Copernicus DEM (GLO-30)&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+                &lt;tr&gt;&lt;td&gt;&lt;strong&gt;Thermal&lt;&#x2F;strong&gt;&lt;&#x2F;td&gt;&lt;td&gt;Landsat-8 (TIRS), MODIS (LST)&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+            &lt;&#x2F;table&gt;
+            &lt;p style=&quot;font-size: 0.6em;&quot;&gt;&lt;&#x2F;p&gt;
+        &lt;&#x2F;div&gt;
+    &lt;&#x2F;div&gt;
+    &lt;aside class=&quot;notes&quot;&gt;
+        We covered the entire High Mountain Asia region. A critical methodological choice here was the buffer zone. While 10km is standard, we extended this to 12.5km based on geomorphological analysis of existing inventories, ensuring we capture distal lakes formed by past glacial activity.&lt;&#x2F;br&gt;
+        Our data stack is robust. We combine optical data (Landsat&#x2F;Sentinel-2) with SAR (Sentinel-1) to overcome cloud cover issues. We also utilize thermal data from MODIS to classify grids by local climate, allowing for adaptive processing rather than a &quot;one-size-fits-all&quot; approach.&lt;&#x2F;br&gt;
+    &lt;&#x2F;aside&gt;
+&lt;&#x2F;section&gt;
+&lt;section&gt;
+    &lt;div&gt;
+    &lt;img src=&quot;&#x2F;assets&#x2F;glac1.png&quot;&gt;
+                    &lt;p class=&quot;img-caption&quot;&gt;Figure 1: Geographic scope of the HMA study area.&lt;&#x2F;p&gt;
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;section&gt;
+&lt;section&gt;
+    &lt;h3&gt;Methodology: Two-Stage Framework&lt;&#x2F;h3&gt;
+    &lt;p&gt;&lt;strong&gt;Stage 1: Preliminary Boundary Extraction&lt;&#x2F;strong&gt;&lt;br&gt;
+    &lt;span style=&quot;font-size: 0.8em;&quot;&gt;Objective: Identify lake locations and approximate extents.&lt;&#x2F;span&gt;&lt;&#x2F;p&gt;
+    &lt;hr&gt;
+    &lt;p&gt;&lt;strong&gt;Stage 2: Refined Boundary Delineation&lt;&#x2F;strong&gt;&lt;br&gt;
+    &lt;span style=&quot;font-size: 0.8em;&quot;&gt;Objective: Precise mapping using high-resolution Sentinel-2.&lt;&#x2F;span&gt;&lt;&#x2F;p&gt;
+    &lt;aside class=&quot;notes&quot;&gt;
+        Our automated workflow operates in two distinct stages.&lt;&#x2F;br&gt;
+        Stage 1 is about &quot;Recall&quot;—finding everything that *might* be a lake using robust composites.&lt;&#x2F;br&gt;
+        Stage 2 is about &quot;Precision&quot;—taking those candidate locations and refining the boundaries using higher resolution data and dynamic thresholding.&lt;&#x2F;br&gt;
+        This separation allows us to use coarser, cleaner composites for detection, and finer, instantaneous imagery for delineation.&lt;&#x2F;br&gt;
+    &lt;&#x2F;aside&gt;
+&lt;&#x2F;section&gt;
+&lt;section&gt;
+    &lt;h3&gt;Stage 1: Multi-Source Integration&lt;&#x2F;h3&gt;
+    &lt;ul style=&quot;font-size: 0.8em&quot;&gt;
+        &lt;li&gt;&lt;strong&gt;Landsat-8 Composite:&lt;&#x2F;strong&gt; Used &lt;strong&gt;25th Percentile&lt;&#x2F;strong&gt; composite (June-Oct).
+            &lt;ul&gt;
+                &lt;li&gt;&lt;em&gt;Why?&lt;&#x2F;em&gt; Effectively removes clouds (high reflectance) and captures water (low reflectance) better than mean&#x2F;median.&lt;&#x2F;li&gt;
+            &lt;&#x2F;ul&gt;
+        &lt;&#x2F;li&gt;
+        &lt;li&gt;&lt;strong&gt;Sentinel-1 SAR:&lt;&#x2F;strong&gt; Median composite to remove transient noise&#x2F;icebergs.&lt;&#x2F;li&gt;
+        &lt;li&gt;&lt;strong&gt;Masking Strategy:&lt;&#x2F;strong&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;strong&gt;Slope:&lt;&#x2F;strong&gt; $&lt;25^\circ$ threshold (sensitivity analysis optimal).&lt;&#x2F;li&gt;
+                &lt;li&gt;&lt;strong&gt;Temperature:&lt;&#x2F;strong&gt; Adaptive thresholds ($-1^\circ C$ or $-2^\circ C$) based on MODIS Mean LST.&lt;&#x2F;li&gt;
+            &lt;&#x2F;ul&gt;
+        &lt;&#x2F;li&gt;
+    &lt;&#x2F;ul&gt;
+    &lt;aside class=&quot;notes&quot;&gt;
+        In Stage 1, we innovated on the compositing method. Instead of the standard median composite for optical data, we used the 25th percentile. Since clouds have high reflectance and water has low reflectance, the 25th percentile effectively filters out cloud cover, leaving a clear &quot;dark&quot; water signal.&lt;&#x2F;br&gt;
+        We fused this with Sentinel-1 SAR data, which sees through clouds entirely. &lt;&#x2F;br&gt;
+        To remove false positives (like mountain shadows), we applied a slope mask derived from Copernicus DEM. We found 25 degrees to be the &quot;sweet spot&quot;—lower angles excluded real lakes, while higher angles included too many shadows.&lt;&#x2F;br&gt;
+    &lt;&#x2F;aside&gt;
+&lt;&#x2F;section&gt;
+&lt;section&gt;
+    &lt;h3&gt;Stage 2: Refinement &amp; Dynamic Thresholding&lt;&#x2F;h3&gt;
+    &lt;ol style=&quot;font-size: 0.8em&quot;&gt;
+        &lt;li&gt;&lt;strong&gt;Image Selection:&lt;&#x2F;strong&gt; Selected optimal cloud-free Sentinel-2 images based on max NDWI and min Snow Index.&lt;&#x2F;li&gt;
+        &lt;li&gt;&lt;strong&gt;Dynamic Segmentation:&lt;&#x2F;strong&gt;
+            &lt;ul&gt;
+                &lt;li&gt;Automated variance-minimization to find local thresholds for NDWI.&lt;&#x2F;li&gt;
+                &lt;li&gt;Avoids the pitfalls of global thresholds (e.g., missed turbid lakes).&lt;&#x2F;li&gt;
+            &lt;&#x2F;ul&gt;
+        &lt;&#x2F;li&gt;
+        &lt;li&gt;&lt;strong&gt;Post-Processing:&lt;&#x2F;strong&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;strong&gt;Histogram Analysis:&lt;&#x2F;strong&gt; Bimodal histograms kept (water vs. land); unimodal rejected.&lt;&#x2F;li&gt;
+                &lt;li&gt;&lt;strong&gt;River Filter:&lt;&#x2F;strong&gt; Removed streams using HydroRIVERS network.&lt;&#x2F;li&gt;
+            &lt;&#x2F;ul&gt;
+        &lt;&#x2F;li&gt;
+    &lt;&#x2F;ol&gt;
+    &lt;aside class=&quot;notes&quot;&gt;
+        For the final boundaries, we move to Sentinel-2 (10m resolution).&lt;&#x2F;br&gt;
+        Crucially, we don&#x27;t just take a mosaic. For each identified lake object, we select the *best single image* where the lake is most visible (high NDWI, low snow). &lt;&#x2F;br&gt;
+        Then, instead of applying a fixed water index threshold (like 0.1), we calculate a dynamic threshold for *each specific lake* based on local variance. This allows us to correctly map both crystal clear lakes and highly turbid, sediment-rich lakes that would be missed by standard algorithms.&lt;&#x2F;br&gt;
+    &lt;&#x2F;aside&gt;
+&lt;&#x2F;section&gt;
+&lt;section&gt;
+&lt;div style=&quot;display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%;&quot;&gt;
+        &lt;div style=&quot;height: 60vh; width: 100%; display: flex; justify-content: center;&quot;&gt;
+            &lt;img src=&quot;&#x2F;assets&#x2F;glac2.png&quot; 
+                 style=&quot;max-height: 100%; max-width: 100%; object-fit: contain; border: 1px solid #6272a4; border-radius: 8px;&quot;&gt;
+        &lt;&#x2F;div&gt;
+        &lt;p class=&quot;img-caption&quot; style=&quot;margin-top: 10px; font-size: 0.5em;&quot;&gt;
+            Figure 2: Flow Diagram of the methodology used to extract glacial lake outlines.
+        &lt;&#x2F;p&gt;
+    &lt;&#x2F;div&gt;
+&lt;&#x2F;section&gt;
+&lt;section&gt;
+    &lt;h3&gt;2022 Inventory Results&lt;&#x2F;h3&gt;
+    &lt;div class=&quot;metric-box&quot;&gt;
+        &lt;h4&gt;Total Lakes: 31,698&lt;&#x2F;h4&gt;
+        &lt;h4&gt;Total Area: 2,240 km²&lt;&#x2F;h4&gt;
+    &lt;&#x2F;div&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;strong&gt;Distribution:&lt;&#x2F;strong&gt;
+            &lt;ul&gt;
+                &lt;li&gt;Highest count: &lt;strong&gt;Inner Tibet&lt;&#x2F;strong&gt; (5,672 lakes).&lt;&#x2F;li&gt;
+                &lt;li&gt;Largest area coverage: &lt;strong&gt;Eastern Himalaya&lt;&#x2F;strong&gt; (0.53% of basin).&lt;&#x2F;li&gt;
+            &lt;&#x2F;ul&gt;
+        &lt;&#x2F;li&gt;
+        &lt;li&gt;&lt;strong&gt;Size Classes:&lt;&#x2F;strong&gt;
+            &lt;ul&gt;
+                &lt;li&gt;Small ($\le 20k~m^2$): 53% of count, but only 7.8% of area.&lt;&#x2F;li&gt;
+                &lt;li&gt;Large ($&gt; 100k~m^2$): 11% of count, but &lt;strong&gt;70% of total area&lt;&#x2F;strong&gt;.&lt;&#x2F;li&gt;
+            &lt;&#x2F;ul&gt;
+        &lt;&#x2F;li&gt;
+    &lt;&#x2F;ul&gt;
+    &lt;aside class=&quot;notes&quot;&gt;
+        Our 2022 inventory identified nearly 32,000 lakes.&lt;&#x2F;br&gt;
+        While the count is dominated by small lakes (over 50% are under 20,000 square meters), the hydrological volume is dominated by the large lakes. &lt;&#x2F;br&gt;
+        Geographically, Inner Tibet has the highest number of lakes, but the Eastern Himalaya has the highest density of lake area relative to the landscape. Most lakes sit between 4000 and 5400 meters elevation.&lt;&#x2F;br&gt;
+    &lt;&#x2F;aside&gt;
+&lt;&#x2F;section&gt;
+&lt;section&gt;
+    &lt;h3&gt;Change Detection (2016&#x2F;17 to 2022&#x2F;24)&lt;&#x2F;h3&gt;
+    &lt;p&gt;&lt;strong&gt;Overall Net Change: +5.5% Area Increase&lt;&#x2F;strong&gt; &lt;&#x2F;p&gt;
+    &lt;table style=&quot;font-size: 0.7em;&quot;&gt;
+        &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;th&gt;Region&lt;&#x2F;th&gt;
+                &lt;th&gt;Change Characteristics&lt;&#x2F;th&gt;
+            &lt;&#x2F;tr&gt;
+        &lt;&#x2F;thead&gt;
+        &lt;tbody&gt;
+            &lt;tr&gt;
+                &lt;td&gt;&lt;strong&gt;Qilian Shan&lt;&#x2F;strong&gt;&lt;&#x2F;td&gt;
+                &lt;td&gt;Highest expansion rate (&lt;strong&gt;+22.5%&lt;&#x2F;strong&gt;).&lt;&#x2F;td&gt;
+            &lt;&#x2F;tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;&lt;strong&gt;Pamir&lt;&#x2F;strong&gt;&lt;&#x2F;td&gt;
+                &lt;td&gt;Most stable region (+2.9%).&lt;&#x2F;td&gt;
+            &lt;&#x2F;tr&gt;
+            &lt;tr&gt;
+                &lt;td&gt;&lt;strong&gt;Proglacial Lakes&lt;&#x2F;strong&gt;&lt;&#x2F;td&gt;
+                &lt;td&gt;Expanded 2.4x faster than unconnected lakes. Account for &lt;strong&gt;56.9%&lt;&#x2F;strong&gt; of total area increase.&lt;&#x2F;td&gt;
+            &lt;&#x2F;tr&gt;
+        &lt;&#x2F;tbody&gt;
+    &lt;&#x2F;table&gt;
+    &lt;p style=&quot;font-size: 0.6em; margin-top: 20px;&quot;&gt;&lt;em&gt;*Analysis restricted to lakes $&gt;10,000~m^2$ with valid multi-temporal data.&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+    &lt;aside class=&quot;notes&quot;&gt;
+        We analyzed changes over a roughly 6-year period. The overall trend is a clear expansion of 5.5%, but this masks significant regional heterogeneity.&lt;&#x2F;br&gt;
+        The Qilian Shan region is changing rapidly (over 20% expansion), while the Pamir region is relatively stable.&lt;&#x2F;br&gt;
+        The driver is clear: Proglacial lakes (those touching glaciers) are expanding significantly faster than unconnected lakes. In fact, lakes within 1km of a glacier were responsible for nearly 57% of the total area growth in HMA. This confirms the direct link between glacier retreat and lake formation.&lt;&#x2F;br&gt;
+    &lt;&#x2F;aside&gt;
+&lt;&#x2F;section&gt;
+&lt;section&gt;
+    &lt;h3&gt;Accuracy Assessment&lt;&#x2F;h3&gt;
+    &lt;div style=&quot;display: grid; grid-template-columns: 1fr 1fr; gap: 20px;&quot;&gt;
+        &lt;div&gt;
+            &lt;h4&gt;Detection Accuracy&lt;&#x2F;h4&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;strong&gt;Overall:&lt;&#x2F;strong&gt; 79.4%.&lt;&#x2F;li&gt;
+                &lt;li&gt;&lt;strong&gt;Medium Lakes (20k-100k $m^2$):&lt;&#x2F;strong&gt; &gt;96%.&lt;&#x2F;li&gt;
+                &lt;li&gt;&lt;strong&gt;Large Lakes (&gt;100k $m^2$):&lt;&#x2F;strong&gt; 100% detection.&lt;&#x2F;li&gt;
+            &lt;&#x2F;ul&gt;
+        &lt;&#x2F;div&gt;
+        &lt;div&gt;
+            &lt;h4&gt;Delineation Accuracy&lt;&#x2F;h4&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;strong&gt;Intersection over Union (IoU):&lt;&#x2F;strong&gt; 0.94 mean.&lt;&#x2F;li&gt;
+                &lt;li&gt;&lt;strong&gt;Relative Area Accuracy:&lt;&#x2F;strong&gt; 96.89%.&lt;&#x2F;li&gt;
+            &lt;&#x2F;ul&gt;
+        &lt;&#x2F;div&gt;
+    &lt;&#x2F;div&gt;
+    &lt;p style=&quot;font-size: 0.6em; margin-top: 20px;&quot;&gt;&lt;em&gt;Evaluation against manually digitized high-res Planet imagery (3m).&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+    &lt;aside class=&quot;notes&quot;&gt;
+        We rigorously validated our results against manual digitization of 3-meter Planet imagery.&lt;&#x2F;br&gt;
+        Our detection is robust: We found 100% of large lakes and 96% of medium lakes.&lt;&#x2F;br&gt;
+        The challenge remains with the very smallest lakes (under 5,400 square meters), where detection drops to 25%. However, for the crucial medium-to-large lakes that pose the greatest GLOF risks, our method is highly reliable.&lt;&#x2F;br&gt;
+        Spatially, our boundaries match manual tracing with a 0.94 IoU score, indicating very precise edge detection.&lt;&#x2F;br&gt;
+    &lt;&#x2F;aside&gt;
+&lt;&#x2F;section&gt;
+&lt;section&gt;
+    &lt;h3&gt;Discussion &amp; Comparison&lt;&#x2F;h3&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;strong&gt;Comparison with Existing Inventories:&lt;&#x2F;strong&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;em&gt;Wang et al. (Manual):&lt;&#x2F;em&gt; We matched their accuracy (~86%) while automating the process.&lt;&#x2F;li&gt;
+                &lt;li&gt;&lt;em&gt;Shugar et al. (Global Auto):&lt;&#x2F;em&gt; We achieved significantly higher detection (98% vs 63%) in comparable size bins.&lt;&#x2F;li&gt;
+            &lt;&#x2F;ul&gt;
+        &lt;&#x2F;li&gt;
+        &lt;li&gt;&lt;strong&gt;Drivers of Change:&lt;&#x2F;strong&gt;
+            &lt;ul&gt;
+                &lt;li&gt;Primary driver: Accelerated glacier melt&#x2F;retreat.&lt;&#x2F;li&gt;
+                &lt;li&gt;Regional variability aligns with mass balance heterogeneity (e.g., stable Pamir anomaly vs. melting Himalaya).&lt;&#x2F;li&gt;
+            &lt;&#x2F;ul&gt;
+        &lt;&#x2F;li&gt;
+    &lt;&#x2F;ul&gt;
+    &lt;aside class=&quot;notes&quot;&gt;
+        When compared to previous &quot;gold standard&quot; inventories, our method performs exceptionally well. We matched the accuracy of Wang&#x27;s manual inventory but with a fully automated, reproducible pipeline.&lt;&#x2F;br&gt;
+        Compared to Shugar&#x27;s global automated dataset, we detected significantly more lakes, particularly in the smaller size classes.&lt;&#x2F;br&gt;
+        Our findings reinforce the narrative of heterogeneous glacier mass loss in HMA. The stability of lakes in the Pamir region corresponds with the known &quot;Karakoram-Pamir Anomaly,&quot; while rapid expansion in the Himalayas tracks with high mass loss rates.&lt;&#x2F;br&gt;
+    &lt;&#x2F;aside&gt;
+&lt;&#x2F;section&gt;
+&lt;section&gt;
+    &lt;h3&gt;Conclusions &amp; Future Work&lt;&#x2F;h3&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;strong&gt;Methodological Success:&lt;&#x2F;strong&gt; Developed a robust, fully automated pipeline integrating Optical, SAR, and Thermal data.&lt;&#x2F;li&gt;
+        &lt;li&gt;&lt;strong&gt;Key Findings:&lt;&#x2F;strong&gt;
+            &lt;ul&gt;
+                &lt;li&gt;Identified &lt;strong&gt;31,698&lt;&#x2F;strong&gt; lakes (2022).&lt;&#x2F;li&gt;
+                &lt;li&gt;Documented &lt;strong&gt;5.5%&lt;&#x2F;strong&gt; area expansion (2016-2024).&lt;&#x2F;li&gt;
+                &lt;li&gt;Confirmed high detection rates (&gt;96%) for hazardous medium-sized lakes.&lt;&#x2F;li&gt;
+            &lt;&#x2F;ul&gt;
+        &lt;&#x2F;li&gt;
+        &lt;li&gt;&lt;strong&gt;Impact:&lt;&#x2F;strong&gt; Provides a baseline for routine, high-frequency monitoring of GLOF hazards in HMA.&lt;&#x2F;li&gt;
+    &lt;&#x2F;ul&gt;
+    &lt;aside class=&quot;notes&quot;&gt;
+        In conclusion, we have presented a verified, automated workflow that produces high-quality glacial lake inventories.&lt;&#x2F;br&gt;
+        We have mapped over 31,000 lakes and quantified their rapid expansion. This dataset serves as a critical baseline.&lt;&#x2F;br&gt;
+        Future work will focus on applying this method to intra-annual timescales to capture seasonal dynamics and integrating this data with downstream population exposure models for comprehensive risk assessment.&lt;&#x2F;br&gt;
+        Thank you.
+    &lt;&#x2F;aside&gt;
+&lt;&#x2F;section&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Remote Sensing and Modeling of the Cryosphere in High Mountain Asia</title>
+        <published>2026-02-03T00:00:00+00:00</published>
+        <updated>2026-02-03T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://yoganshsharma.github.io/slides/rmcryhma/"/>
+        <id>https://yoganshsharma.github.io/slides/rmcryhma/</id>
+        
+        <content type="html" xml:base="https://yoganshsharma.github.io/slides/rmcryhma/">&lt;section&gt;
+  &lt;h2&gt;Remote Sensing and Modeling of the Cryosphere in High Mountain Asia&lt;&#x2F;h2&gt;
+  &lt;h3&gt;A Multidisciplinary Review&lt;&#x2F;h3&gt;
+  &lt;p style=&quot;font-size: 0.6em;&quot;&gt;Based on: Ye, Q.; Wang, Y.; Liu, L.; et al. &lt;em&gt;Remote Sens.&lt;&#x2F;em&gt; 2024, 16, 1709 &lt;&#x2F;p&gt;
+  &lt;p style=&quot;font-size: 0.5em;&quot;&gt;
+    &lt;strong&gt;Presenter:&lt;&#x2F;strong&gt; Yogansh Sharma&lt;br&gt;
+  &lt;&#x2F;p&gt;
+  &lt;aside class=&quot;notes&quot;&gt;
+    Good morning. Today I will be presenting a comprehensive multidisciplinary review of remote sensing techniques and modeling efforts focused on the cryosphere of High Mountain Asia (HMA). This presentation is based on the 2024 review paper by Ye et al. published in MDPI Remote Sensing.    HMA, often called the &quot;Third Pole,&quot; contains the largest reservoir of ice and snow outside the polar regions. We will explore how satellite observations have evolved over the last 60 years to monitor glaciers, snow, frozen ground, and lake ice, and how these data feed into hydrological models to predict future water resources and hazards.
+  &lt;&#x2F;aside&gt;
+&lt;&#x2F;section&gt;&lt;section&gt;
+  &lt;h3&gt;1. Introduction: The Asian Water Tower&lt;&#x2F;h3&gt;
+  &lt;div style=&quot;text-align: left; font-size: 0.7em;&quot;&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;Significance:&lt;&#x2F;strong&gt; HMA feeds major rivers providing water for nearly 2 billion people.&lt;&#x2F;li&gt;
+      &lt;li&gt;&lt;strong&gt;Current State:&lt;&#x2F;strong&gt; Rapid change due to global warming:
+        &lt;ul&gt;
+          &lt;li&gt;Glacier melting &amp; Permafrost thawing &lt;&#x2F;li&gt;
+          &lt;li&gt;Snow cover decreasing &lt;&#x2F;li&gt;
+          &lt;li&gt;Lake ice duration shortening &lt;&#x2F;li&gt;
+        &lt;&#x2F;ul&gt;
+      &lt;&#x2F;li&gt;
+      &lt;li&gt;&lt;strong&gt;Hazards:&lt;&#x2F;strong&gt; Increase in rock-ice avalanches, landslides, and Glacial Lake Outburst Floods (GLOFs).&lt;&#x2F;li&gt;
+      &lt;li&gt;&lt;strong&gt;Research Volume:&lt;&#x2F;strong&gt; &gt;11,000 papers published on HMA cryosphere (Feb 2024).&lt;&#x2F;li&gt;
+    &lt;&#x2F;ul&gt;
+  &lt;&#x2F;div&gt;
+  &lt;aside class=&quot;notes&quot;&gt;
+    The cryosphere in High Mountain Asia is critical to the hydrological cycle of the region. It is identified as the &quot;Asian Water Tower.&quot; 
+    However, the system is under stress. Global warming is driving rapid changes: glaciers are retreating, permafrost is degrading, and snow cover is becoming more erratic. These physical changes have direct consequences for human livelihoods through water resource availability and the increasing frequency of natural disasters like GLOFs.
+    The academic interest in this region has exploded, with over 11,000 satellite-based studies published by early 2024. Glaciers remain the most studied topic, followed by snow and hazards.
+  &lt;&#x2F;aside&gt;
+&lt;&#x2F;section&gt;&lt;section&gt;
+  &lt;h3&gt;2. Data Acquisition: Satellite Sensors&lt;&#x2F;h3&gt;
+  &lt;div style=&quot;display: flex; justify-content: space-between; font-size: 0.6em;&quot;&gt;
+    &lt;div style=&quot;width: 48%;&quot;&gt;
+      &lt;h4&gt;Optical Sensors&lt;&#x2F;h4&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;strong&gt;Landsat Series (1-9):&lt;&#x2F;strong&gt; Longest record (1970s–present); free access since 2008.&lt;&#x2F;li&gt;
+        &lt;li&gt;&lt;strong&gt;Sentinel-2&#x2F;MSI:&lt;&#x2F;strong&gt; High temporal resolution (10 days).&lt;&#x2F;li&gt;
+        &lt;li&gt;&lt;strong&gt;MODIS (Terra&#x2F;Aqua):&lt;&#x2F;strong&gt; Daily revisit; key for snow&#x2F;lake ice.&lt;&#x2F;li&gt;
+        &lt;li&gt;&lt;strong&gt;ASTER:&lt;&#x2F;strong&gt; Stereo-pair capabilities for DEM generation.&lt;&#x2F;li&gt;
+      &lt;&#x2F;ul&gt;
+    &lt;&#x2F;div&gt;
+    &lt;div style=&quot;width: 48%;&quot;&gt;
+      &lt;h4&gt;Microwave &amp; Altimetry&lt;&#x2F;h4&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;strong&gt;Passive Microwave:&lt;&#x2F;strong&gt; SMMR, AMSR-E&#x2F;2; All-weather snow depth&#x2F;SWE monitoring.&lt;&#x2F;li&gt;
+        &lt;li&gt;&lt;strong&gt;Active Microwave (SAR):&lt;&#x2F;strong&gt; Sentinel-1, ALOS PALSAR; Deformation and velocity.&lt;&#x2F;li&gt;
+        &lt;li&gt;&lt;strong&gt;Altimetry:&lt;&#x2F;strong&gt; ICESat-2&#x2F;ATLAS, CryoSat-2; Precise elevation change.&lt;&#x2F;li&gt;
+      &lt;&#x2F;ul&gt;
+    &lt;&#x2F;div&gt;
+  &lt;&#x2F;div&gt;
+  &lt;aside class=&quot;notes&quot;&gt;
+    The backbone of HMA research is the constellation of Earth-observing satellites. 
+    Optical sensors like Landsat and Sentinel-2 provide high-resolution imagery for delineating extent. The Landsat archive, open since 2008, allows for multi-decadal change detection. MODIS provides the high temporal frequency needed for snow cover and lake ice phenology.
+    However, optical sensors fail under cloud cover—a major issue in mountainous regions. This is where microwave sensors come in. Passive microwave (AMSR-E) monitors snow water equivalent (SWE) daily, though at coarse resolution. Active SAR (Sentinel-1) is crucial for tracking glacier velocity and ground deformation. Finally, laser altimetry (ICESat-2) gives us precise vertical profiles to calculate mass balance.
+  &lt;&#x2F;aside&gt;
+&lt;&#x2F;section&gt;&lt;section&gt;
+  &lt;h3&gt;3. Glacier Inventories&lt;&#x2F;h3&gt;
+  &lt;div style=&quot;font-size: 0.7em;&quot;&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;Major Inventories:&lt;&#x2F;strong&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;em&gt;Randolph Glacier Inventory (RGI 7.0):&lt;&#x2F;em&gt; Global standard, 1950–2021 data.&lt;&#x2F;li&gt;
+          &lt;li&gt;&lt;em&gt;GAMDAM (GGI-18):&lt;&#x2F;em&gt; Manual digitization (1990–2010).&lt;&#x2F;li&gt;
+          &lt;li&gt;&lt;em&gt;Second Chinese Glacier Inventory (CGI-2):&lt;&#x2F;em&gt; Landsat based (2006–2010).&lt;&#x2F;li&gt;
+        &lt;&#x2F;ul&gt;
+      &lt;&#x2F;li&gt;
+      &lt;li&gt;&lt;strong&gt;Methodological Shift:&lt;&#x2F;strong&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;strong&gt;Traditional:&lt;&#x2F;strong&gt; Manual digitization &amp; band ratios (NDSI).&lt;&#x2F;li&gt;
+          &lt;li&gt;&lt;strong&gt;Emerging:&lt;&#x2F;strong&gt; Deep Learning (CNNs) for debris-covered glaciers.&lt;&#x2F;li&gt;
+        &lt;&#x2F;ul&gt;
+      &lt;&#x2F;li&gt;
+      &lt;li&gt;&lt;strong&gt;Key Challenge:&lt;&#x2F;strong&gt; Debris-covered glaciers mimic surrounding rock spectrally.&lt;&#x2F;li&gt;
+    &lt;&#x2F;ul&gt;
+  &lt;&#x2F;div&gt;
+  &lt;aside class=&quot;notes&quot;&gt;
+    Accurate inventories are the baseline for all mass balance studies. The Randolph Glacier Inventory (RGI) is the global standard, with version 7.0 released in 2023. Regional inventories like the Second Chinese Glacier Inventory provide specific high-resolution snapshots.
+    Methodologically, we are moving from simple band-ratio thresholding (like NDSI) to complex deep learning models. The &quot;holy grail&quot; right now is automated delineation of debris-covered glaciers. Because supraglacial debris has the same spectral signature as the surrounding bedrock, optical automated classification often fails, necessitating the use of thermal bands, topographic data, and coherence images from SAR.
+  &lt;&#x2F;aside&gt;
+&lt;&#x2F;section&gt;&lt;section&gt;
+  &lt;h3&gt;4. Glacier Mass Balance (MB)&lt;&#x2F;h3&gt;
+  &lt;p style=&quot;font-size: 0.6em;&quot;&gt;&lt;strong&gt;Method:&lt;&#x2F;strong&gt; Geodetic method (DEM differencing) &amp; Altimetry (ICESat-2&#x2F;CryoSat-2)&lt;&#x2F;p&gt;
+  &lt;div style=&quot;font-size: 0.65em;&quot;&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;General Trend:&lt;&#x2F;strong&gt; Significant mass loss across HMA.
+        &lt;ul&gt;
+          &lt;li&gt;2000–2016 (HMA wide): $-0.18 \pm 0.04~m~w.e.a^{-1}$.&lt;&#x2F;li&gt;
+          &lt;li&gt;Himalayas acceleration: From $-0.22$ (1975–2000) to $-0.43~m~w.e.a^{-1}$ (2000–2016).&lt;&#x2F;li&gt;
+        &lt;&#x2F;ul&gt;
+      &lt;&#x2F;li&gt;
+      &lt;li&gt;&lt;strong&gt;Data Inconsistencies:&lt;&#x2F;strong&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;Eastern Kunlun estimates range from $-0.07$ (DEMs) to $-0.49~m~w.e.a^{-1}$ (Radar Altimetry).&lt;&#x2F;li&gt;
+        &lt;&#x2F;ul&gt;
+      &lt;&#x2F;li&gt;
+      &lt;li&gt;&lt;strong&gt;Altitudinal Effect:&lt;&#x2F;strong&gt; More negative MB at lower altitudes; near zero equilibrium at ~6200m a.s.l. (Mt. Qomolangma) .&lt;&#x2F;li&gt;
+    &lt;&#x2F;ul&gt;
+  &lt;&#x2F;div&gt;
+  &lt;aside class=&quot;notes&quot;&gt;
+    Quantifying mass loss is primarily done via the geodetic method—comparing DEMs from different epochs—or satellite altimetry.
+    The general signal is clear: HMA is losing mass, with the rate doubling in the Himalayas since 2000. However, we must note the significant uncertainty. Different techniques yield vastly different numbers for the same region, as seen in the Eastern Kunlun example where results differ by a factor of seven depending on whether optical DEMs or radar altimetry is used.
+    We also observe strong altitudinal gradients. On Mt. Everest, mass balance approaches zero around 6200 meters, which serves as the approximate Equilibrium Line Altitude (ELA).
+  &lt;&#x2F;aside&gt;
+&lt;&#x2F;section&gt;&lt;section&gt;
+  &lt;h3&gt;The &quot;Karakoram Anomaly&quot;&lt;&#x2F;h3&gt;
+  &lt;div style=&quot;font-size: 0.7em; text-align: left;&quot;&gt;
+    &lt;p&gt;&lt;strong&gt;Phenomenon:&lt;&#x2F;strong&gt; Regions where glaciers show slight mass gain or balanced budgets, contrasting with global retreat.&lt;&#x2F;p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;Locations:&lt;&#x2F;strong&gt; Karakoram, Pamir, and Western Kunlun Shan.&lt;&#x2F;li&gt;
+      &lt;li&gt;&lt;strong&gt;Western Kunlun MB:&lt;&#x2F;strong&gt; $+0.14 \pm 0.08~m~w.e.a^{-1}$ (slight positive).&lt;&#x2F;li&gt;
+      &lt;li&gt;&lt;strong&gt;Surging:&lt;&#x2F;strong&gt; High concentration of surge-type glaciers.
+        &lt;ul&gt;
+          &lt;li&gt;&lt;em&gt;Identification:&lt;&#x2F;em&gt; Rapid velocity increase (order of magnitude), terminus advance, and surface elevation changes.&lt;&#x2F;li&gt;
+          &lt;li&gt;&lt;em&gt;Inventories:&lt;&#x2F;em&gt; Vary from 137 to 890 identified surge-type glaciers depending on criteria.&lt;&#x2F;li&gt;
+        &lt;&#x2F;ul&gt;
+      &lt;&#x2F;li&gt;
+    &lt;&#x2F;ul&gt;
+  &lt;&#x2F;div&gt;
+  &lt;aside class=&quot;notes&quot;&gt;
+    Not all of HMA is melting at the same rate. We observe the &quot;Karakoram Anomaly&quot; in the Karakoram, Pamir, and Western Kunlun ranges. Here, mass balances are neutral or even slightly positive. 
+    This region is also a hotspot for glacier surging—a flow instability where glaciers advance rapidly. Identifying these surges requires analyzing velocity fields and frontal changes. Interestingly, the count of surge-type glaciers varies wildly between inventories (137 vs 890), highlighting a lack of standardized classification criteria in remote sensing methodologies.
+  &lt;&#x2F;aside&gt;
+&lt;&#x2F;section&gt;&lt;section&gt;
+  &lt;h3&gt;5. Snow Cover &amp; SWE&lt;&#x2F;h3&gt;
+  &lt;div style=&quot;font-size: 0.65em;&quot;&gt;
+    &lt;table style=&quot;width: 100%;&quot;&gt;
+      &lt;thead&gt;
+        &lt;tr&gt;
+          &lt;th&gt;Parameter&lt;&#x2F;th&gt;
+          &lt;th&gt;Primary Sensors&lt;&#x2F;th&gt;
+          &lt;th&gt;Limitations&lt;&#x2F;th&gt;
+        &lt;&#x2F;tr&gt;
+      &lt;&#x2F;thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Snow Cover Extent (SCE)&lt;&#x2F;strong&gt;&lt;&#x2F;td&gt;
+          &lt;td&gt;MODIS (500m), AVHRR (5km) &lt;&#x2F;td&gt;
+          &lt;td&gt;Cloud cover requires temporal compositing or cloud-removal algorithms.&lt;&#x2F;td&gt;
+        &lt;&#x2F;tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;SWE &#x2F; Snow Depth&lt;&#x2F;strong&gt;&lt;&#x2F;td&gt;
+          &lt;td&gt;Passive Microwave (AMSR-E&#x2F;2, SMMR) &lt;&#x2F;td&gt;
+          &lt;td&gt;&lt;strong&gt;Saturation:&lt;&#x2F;strong&gt; Signals saturate if SWE &gt; 30mm (underestimation).&lt;br&gt;&lt;strong&gt;Overestimation:&lt;&#x2F;strong&gt; In shallow snow (&lt;30mm) or frozen ground.&lt;&#x2F;td&gt;
+        &lt;&#x2F;tr&gt;
+      &lt;&#x2F;tbody&gt;
+    &lt;&#x2F;table&gt;
+    &lt;p style=&quot;margin-top: 20px;&quot;&gt;&lt;strong&gt;Trend:&lt;&#x2F;strong&gt; Significant decrease in snow depth in HMA from 1988–2020.&lt;&#x2F;p&gt;
+  &lt;&#x2F;div&gt;
+  &lt;aside class=&quot;notes&quot;&gt;
+    Snow cover is monitored using optical sensors like MODIS, but cloud cover is a persistent issue requiring gap-filling algorithms.
+    For Snow Water Equivalent (SWE) and depth, we rely on passive microwave sensors (AMSR-E). However, this technique has severe physical limitations. The microwave signal saturates when SWE exceeds 30mm, leading to underestimation in deep snow packs. Conversely, in shallow snow or frozen ground areas, it often overestimates. 
+    Despite these issues, long-term records indicate a significant decreasing trend in snow depth across HMA over the last three decades.
+  &lt;&#x2F;aside&gt;
+&lt;&#x2F;section&gt;&lt;section&gt;
+  &lt;h3&gt;6. Frozen Ground (Permafrost)&lt;&#x2F;h3&gt;
+  &lt;div style=&quot;font-size: 0.7em; text-align: left;&quot;&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;Extent:&lt;&#x2F;strong&gt; Covers ~86% of HMA; Permafrost specifically ~28% ($1.27 \times 10^6~km^2$).&lt;&#x2F;li&gt;
+      &lt;li&gt;&lt;strong&gt;Monitoring Techniques:&lt;&#x2F;strong&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;em&gt;Thermal State:&lt;&#x2F;em&gt; Land Surface Temperature (LST) from MODIS&#x2F;ASTER used to model Mean Annual Ground Temperature (MAGT).&lt;&#x2F;li&gt;
+          &lt;li&gt;&lt;em&gt;Active Layer:&lt;&#x2F;em&gt; InSAR measures surface deformation (subsidence&#x2F;heave) to infer active layer thickness (ALT) changes.&lt;&#x2F;li&gt;
+        &lt;&#x2F;ul&gt;
+      &lt;&#x2F;li&gt;
+      &lt;li&gt;&lt;strong&gt;Observed Changes:&lt;&#x2F;strong&gt;
+        &lt;ul&gt;
+          &lt;li&gt;Ground temp at 10m depth increasing $0.02\text{--}0.78^\circ C~decade^{-1}$.&lt;&#x2F;li&gt;
+          &lt;li&gt;Widespread subsidence (~2 cm&#x2F;year) due to thawing ground ice.&lt;&#x2F;li&gt;
+        &lt;&#x2F;ul&gt;
+      &lt;&#x2F;li&gt;
+    &lt;&#x2F;ul&gt;
+  &lt;&#x2F;div&gt;
+  &lt;aside class=&quot;notes&quot;&gt;
+    Frozen ground is the most extensive cryospheric component in HMA, covering 86% of the region. 
+    Remote sensing of permafrost is challenging because it is a subsurface phenomenon. We use proxies: Land Surface Temperature (LST) is used to model Mean Annual Ground Temperature. 
+    More recently, InSAR has become a powerful tool. By measuring seasonal surface deformation—subsidence in summer, heave in winter—we can infer changes in the active layer thickness. Data shows widespread subsidence of up to 2 cm&#x2F;year in the Northern Tibetan Plateau, directly linked to the melting of ground ice.
+  &lt;&#x2F;aside&gt;
+&lt;&#x2F;section&gt;&lt;section&gt;
+  &lt;h3&gt;Rock Glaciers &amp; Aufeis&lt;&#x2F;h3&gt;
+  &lt;div style=&quot;font-size: 0.6em;&quot;&gt;
+    &lt;div class=&quot;fragment&quot;&gt;
+      &lt;h4&gt;Rock Glaciers&lt;&#x2F;h4&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;strong&gt;Definition:&lt;&#x2F;strong&gt; Periglacial landforms moving via permafrost creep. Significant hydrological stores.&lt;&#x2F;li&gt;
+        &lt;li&gt;&lt;strong&gt;Detection:&lt;&#x2F;strong&gt; Manual digitization on Google Earth; InSAR for creep speed.&lt;&#x2F;li&gt;
+        &lt;li&gt;&lt;strong&gt;Status:&lt;&#x2F;strong&gt; No comprehensive HMA-wide inventory exists; local inventories only (Tian Shan, Himalayas).&lt;&#x2F;li&gt;
+      &lt;&#x2F;ul&gt;
+    &lt;&#x2F;div&gt;
+    &lt;div class=&quot;fragment&quot; style=&quot;margin-top: 20px;&quot;&gt;
+      &lt;h4&gt;Aufeis (Icings)&lt;&#x2F;h4&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;strong&gt;Definition:&lt;&#x2F;strong&gt; Sheet-like layered ice formed by freezing groundwater seepage.&lt;&#x2F;li&gt;
+        &lt;li&gt;&lt;strong&gt;Inventory:&lt;&#x2F;strong&gt; 3,848 recurrent Aufeis fields identified in Upper Indus Basin ($298~km^2$).&lt;&#x2F;li&gt;
+        &lt;li&gt;&lt;strong&gt;Role:&lt;&#x2F;strong&gt; Temporary water storage; discharges in early spring.&lt;&#x2F;li&gt;
+      &lt;&#x2F;ul&gt;
+    &lt;&#x2F;div&gt;
+  &lt;&#x2F;div&gt;
+  &lt;aside class=&quot;notes&quot;&gt;
+    Two often-overlooked components are rock glaciers and Aufeis. 
+    Rock glaciers are mixtures of ice and rock that creep downslope. They are resilient water stores in arid regions. Currently, we lack a complete HMA inventory, relying mostly on fragmented local studies using Google Earth and InSAR.
+    Aufeis, or river icings, form from freezing groundwater seepage. Recent studies using Landsat have identified thousands of these features in the Upper Indus Basin. They are hydrologically important because they store water in winter and release it in early spring before the main glacier melt season begins.
+  &lt;&#x2F;aside&gt;
+&lt;&#x2F;section&gt;&lt;section&gt;
+  &lt;h3&gt;7. Lake Ice Phenology&lt;&#x2F;h3&gt;
+  &lt;p style=&quot;font-size: 0.6em;&quot;&gt;Key Indicator of Climate Warming&lt;&#x2F;p&gt;
+  &lt;div style=&quot;font-size: 0.7em;&quot;&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;Parameters:&lt;&#x2F;strong&gt; Freeze-up date, Break-up date, Ice duration, Thickness.&lt;&#x2F;li&gt;
+      &lt;li&gt;&lt;strong&gt;Techniques:&lt;&#x2F;strong&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;em&gt;Optical (MODIS):&lt;&#x2F;em&gt; High temporal resolution, limited by clouds.&lt;&#x2F;li&gt;
+          &lt;li&gt;&lt;em&gt;Passive Microwave (AMSR-E):&lt;&#x2F;em&gt; All-weather, coarse resolution.&lt;&#x2F;li&gt;
+          &lt;li&gt;&lt;em&gt;Altimetry (Jason&#x2F;TOPEX):&lt;&#x2F;em&gt; Lake ice thickness retrieval.&lt;&#x2F;li&gt;
+        &lt;&#x2F;ul&gt;
+      &lt;&#x2F;li&gt;
+      &lt;li&gt;&lt;strong&gt;Trends:&lt;&#x2F;strong&gt;
+        &lt;ul&gt;
+          &lt;li&gt;Delayed freezing, earlier melting $\rightarrow$ Shorter ice duration.&lt;&#x2F;li&gt;
+          &lt;li&gt;Some alpine lakes shifting from perennial to seasonal ice cover.&lt;&#x2F;li&gt;
+        &lt;&#x2F;ul&gt;
+      &lt;&#x2F;li&gt;
+    &lt;&#x2F;ul&gt;
+  &lt;&#x2F;div&gt;
+  &lt;aside class=&quot;notes&quot;&gt;
+    Lake ice is a sensitive sentinel of climate change. We monitor phenology—the timing of freezing and thawing.
+    Using MODIS and passive microwave data, we observe a clear trend: lakes are freezing later and breaking up earlier, leading to shorter ice duration. Satellite altimetry is also being innovatively used to measure the thickness of the ice based on the waveform of the radar return. Some lakes on the Tibetan Plateau are even transitioning from having perennial ice cover to being seasonally ice-free.
+  &lt;&#x2F;aside&gt;
+&lt;&#x2F;section&gt;&lt;section&gt;
+  &lt;h3&gt;8. Glacier-Related Hazards&lt;&#x2F;h3&gt;
+  &lt;div style=&quot;font-size: 0.6em; text-align: left;&quot;&gt;
+    &lt;p&gt;&lt;strong&gt;Glacial Lake Outburst Floods (GLOFs):&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;Database:&lt;&#x2F;strong&gt; 697 events (1833–2022); 6,906 fatalities.&lt;&#x2F;li&gt;
+      &lt;li&gt;&lt;strong&gt;Drivers:&lt;&#x2F;strong&gt; Glacier retreat $\rightarrow$ Lake expansion $\rightarrow$ Dam failure (ice&#x2F;moraine).&lt;&#x2F;li&gt;
+    &lt;&#x2F;ul&gt;
+    &lt;p&gt;&lt;strong&gt;Ice-Rock Avalanches &amp; Collapses:&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;Chamoli Disaster (2021):&lt;&#x2F;strong&gt; Massive rock-ice avalanche (~27 million $m^3$) caused &gt;200 deaths. Analyzed via sub-meter optical stereo (WorldView, Pleiades).&lt;&#x2F;li&gt;
+      &lt;li&gt;&lt;strong&gt;Aru Co Collapse (2016):&lt;&#x2F;strong&gt; Twin glacier collapses analyzed via multiple sensors (ICESat, TanDEM-X).&lt;&#x2F;li&gt;
+    &lt;&#x2F;ul&gt;
+    &lt;p&gt;&lt;strong&gt;Detection Challenges:&lt;&#x2F;strong&gt; Requires high temporal&#x2F;spatial resolution to capture sudden onsets (e.g., PlanetScope).&lt;&#x2F;p&gt;
+  &lt;&#x2F;div&gt;
+  &lt;aside class=&quot;notes&quot;&gt;
+    The changing cryosphere increases hazard risk. 
+    GLOFs are a major threat, with nearly 700 historical events recorded. The mechanism is usually the rapid expansion of proglacial lakes followed by a moraine or ice dam failure.
+    We are also seeing massive structural failures of glaciers. The 2021 Chamoli disaster in India was a wake-up call—a massive rock and ice avalanche that destroyed hydropower infrastructure. Post-event analysis using very-high-resolution commercial imagery (WorldView) was crucial for understanding the volume and mechanics of the failure. Detecting the precursors to these events remains a significant challenge.
+  &lt;&#x2F;aside&gt;
+&lt;&#x2F;section&gt;&lt;section&gt;
+  &lt;h3&gt;9. Cryo-Hydrological Modeling&lt;&#x2F;h3&gt;
+  &lt;div style=&quot;font-size: 0.65em;&quot;&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;Role:&lt;&#x2F;strong&gt; Estimating meltwater contribution to runoff where in-situ data is scarce.&lt;&#x2F;li&gt;
+      &lt;li&gt;&lt;strong&gt;Major Models:&lt;&#x2F;strong&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;em&gt;GloGEM &#x2F; OGGM &#x2F; PyGEM:&lt;&#x2F;em&gt; Open-source global evolution models. Couple mass balance with ice flow dynamics.&lt;&#x2F;li&gt;
+          &lt;li&gt;&lt;em&gt;SRM (Snowmelt Runoff Model):&lt;&#x2F;em&gt; Temperature-indexed.&lt;&#x2F;li&gt;
+        &lt;&#x2F;ul&gt;
+      &lt;&#x2F;li&gt;
+      &lt;li&gt;&lt;strong&gt;Critical Inputs from Remote Sensing:&lt;&#x2F;strong&gt;
+        &lt;ul&gt;
+          &lt;li&gt;Glacier Outlines (RGI) &amp; Debris Cover thickness.&lt;&#x2F;li&gt;
+          &lt;li&gt;Surface Topography (NASADEM, Copernicus).&lt;&#x2F;li&gt;
+          &lt;li&gt;Ice Thickness: Inferred from surface slope and velocity (High uncertainty).&lt;&#x2F;li&gt;
+        &lt;&#x2F;ul&gt;
+      &lt;&#x2F;li&gt;
+    &lt;&#x2F;ul&gt;
+  &lt;&#x2F;div&gt;
+  &lt;aside class=&quot;notes&quot;&gt;
+    To understand the hydrological impact, we feed satellite data into numerical models. Models like GloGEM, OGGM, and PyGEM are the standard. They simulate glacier evolution by coupling mass balance with ice flow physics.
+    These models rely entirely on remote sensing inputs: glacier outlines, digital elevation models, and debris cover maps. A critical missing link is ice thickness. Since we cannot see the bottom of the glacier from space, we infer thickness from surface slope and velocity, which introduces significant uncertainty into water volume estimates.
+  &lt;&#x2F;aside&gt;
+&lt;&#x2F;section&gt;&lt;section&gt;
+  &lt;h3&gt;Hydrological Contributions &amp; Peak Water&lt;&#x2F;h3&gt;
+  &lt;div style=&quot;font-size: 0.7em;&quot;&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;Regional Variation:&lt;&#x2F;strong&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;em&gt;Westerlies (Indus, Amu Darya):&lt;&#x2F;em&gt; Meltwater dominated (&gt;50% contribution).&lt;&#x2F;li&gt;
+          &lt;li&gt;&lt;em&gt;Monsoon (Ganges, Brahmaputra):&lt;&#x2F;em&gt; Rainfall dominated; glacier melt is secondary.&lt;&#x2F;li&gt;
+        &lt;&#x2F;ul&gt;
+      &lt;&#x2F;li&gt;
+      &lt;li&gt;&lt;strong&gt;Peak Water (tipping point of max runoff):&lt;&#x2F;strong&gt;
+        &lt;ul&gt;
+          &lt;li&gt;Most basins: Expected within next 20–30 years.&lt;&#x2F;li&gt;
+          &lt;li&gt;Indus: Projected later (&gt;2060) due to large ice volume.&lt;&#x2F;li&gt;
+        &lt;&#x2F;ul&gt;
+      &lt;&#x2F;li&gt;
+      &lt;li&gt;&lt;strong&gt;Uncertainty:&lt;&#x2F;strong&gt; Glacier melt contribution estimates vary widely (e.g., 30% to 73% for Rongbuk catchment) depending on the epoch and method.&lt;&#x2F;li&gt;
+    &lt;&#x2F;ul&gt;
+  &lt;&#x2F;div&gt;
+  &lt;aside class=&quot;notes&quot;&gt;
+    The hydrological dependence on cryospheric melt varies across HMA. The western basins (Indus, Amu Darya) are heavily dependent on snow and ice melt, sometimes exceeding 50% of flow. The eastern basins are dominated by the summer monsoon rainfall.
+    A key concept is &quot;Peak Water&quot;—the point at which glacier shrinkage causes runoff to decline. For most of HMA, this tipping point is expected in the next few decades. The Indus, with its massive ice reserves, may not hit this peak until after 2060. However, estimates of melt contributions are highly variable, often differing by huge margins (30% vs 70%) depending on the methodology used.
+  &lt;&#x2F;aside&gt;
+&lt;&#x2F;section&gt;&lt;section&gt;
+  &lt;h3&gt;10. Major Challenges in Cryosphere RS&lt;&#x2F;h3&gt;
+  &lt;div style=&quot;font-size: 0.6em;&quot;&gt;
+    &lt;ol&gt;
+      &lt;li&gt;&lt;strong&gt;Uncertainty &amp; Inconsistency:&lt;&#x2F;strong&gt;
+        &lt;ul&gt;
+          &lt;li&gt;Different sensors&#x2F;methods yield conflicting MB results.&lt;&#x2F;li&gt;
+          &lt;li&gt;Lack of ground-based validation (&quot;Ground Truthing&quot;).&lt;&#x2F;li&gt;
+        &lt;&#x2F;ul&gt;
+      &lt;&#x2F;li&gt;
+      &lt;li&gt;&lt;strong&gt;Subsurface Knowledge Gap:&lt;&#x2F;strong&gt;
+        &lt;ul&gt;
+          &lt;li&gt;Cannot directly measure ice thickness, permafrost depth, or sub-glacial hydrology from space.&lt;&#x2F;li&gt;
+        &lt;&#x2F;ul&gt;
+      &lt;&#x2F;li&gt;
+      &lt;li&gt;&lt;strong&gt;Physical Limitations:&lt;&#x2F;strong&gt;
+        &lt;ul&gt;
+          &lt;li&gt;Signal saturation (Snow water equivalent).&lt;&#x2F;li&gt;
+          &lt;li&gt;Geometric distortion in SAR (Layover&#x2F;shadows in steep terrain).&lt;&#x2F;li&gt;
+        &lt;&#x2F;ul&gt;
+      &lt;&#x2F;li&gt;
+      &lt;li&gt;&lt;strong&gt;Equifinality in Modeling:&lt;&#x2F;strong&gt;
+        &lt;ul&gt;
+          &lt;li&gt;Different parameter sets produce the same runoff result, masking incorrect physical assumptions.&lt;&#x2F;li&gt;
+        &lt;&#x2F;ul&gt;
+      &lt;&#x2F;li&gt;
+    &lt;&#x2F;ol&gt;
+  &lt;&#x2F;div&gt;
+  &lt;aside class=&quot;notes&quot;&gt;
+    Despite our progress, significant challenges remain.
+    1. **Inconsistency:** As shown, different satellites give different answers for the same glacier. We lack enough ground truthing to know which one is right.
+    2. **Subsurface Blindness:** Satellites see the surface. We are blind to ice thickness, permafrost depth, and sub-glacial water flow.
+    3. **Terrain:** The steep topography of HMA creates shadows and distortions in SAR and optical data.
+    4. **Equifinality:** In modeling, we can get the &quot;right&quot; answer for river runoff using the &quot;wrong&quot; physical parameters (e.g., wrong ice thickness balanced by wrong melt factor). This limits our predictive confidence.
+  &lt;&#x2F;aside&gt;
+&lt;&#x2F;section&gt;&lt;section&gt;
+  &lt;h3&gt;11. Future Directions&lt;&#x2F;h3&gt;
+  &lt;div style=&quot;font-size: 0.65em;&quot;&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;Technological Innovation:&lt;&#x2F;strong&gt;
+        &lt;ul&gt;
+          &lt;li&gt;Integration of multi-frequency SAR (L-band + C-band) for better penetration (snow&#x2F;ice).&lt;&#x2F;li&gt;
+          &lt;li&gt;Utilization of Big Data platforms (Google Earth Engine) for scale.&lt;&#x2F;li&gt;
+        &lt;&#x2F;ul&gt;
+      &lt;&#x2F;li&gt;
+      &lt;li&gt;&lt;strong&gt;Methodological Advancement:&lt;&#x2F;strong&gt;
+        &lt;ul&gt;
+          &lt;li&gt;Machine Learning&#x2F;Deep Learning for automated feature extraction (e.g., debris-covered ice).&lt;&#x2F;li&gt;
+          &lt;li&gt;Data Assimilation: Combining remote sensing observation directly into physical models to constrain state variables.&lt;&#x2F;li&gt;
+        &lt;&#x2F;ul&gt;
+      &lt;&#x2F;li&gt;
+      &lt;li&gt;&lt;strong&gt;Strategic Focus:&lt;&#x2F;strong&gt;
+        &lt;ul&gt;
+          &lt;li&gt;Cross-verification of independent datasets to reduce uncertainty.&lt;&#x2F;li&gt;
+          &lt;li&gt;Prioritizing determining debris-cover thickness and glacier bed topography.&lt;&#x2F;li&gt;
+        &lt;&#x2F;ul&gt;
+      &lt;&#x2F;li&gt;
+    &lt;&#x2F;ul&gt;
+  &lt;&#x2F;div&gt;
+  &lt;aside class=&quot;notes&quot;&gt;
+    Looking forward, the review identifies three key paths:
+    1. **Technology:** We need to combine different SAR frequencies (like L-band and C-band) to see deeper into the snowpack.
+    2. **AI &amp; Big Data:** We must leverage platforms like Google Earth Engine and Deep Learning to automate the processing of these massive datasets, particularly for difficult tasks like debris-cover mapping.
+    3. **Data Assimilation:** We need to move beyond using remote sensing just for calibration. We should assimilate satellite observations directly into hydrological models in near-real-time to constrain uncertainties.
+  &lt;&#x2F;aside&gt;
+&lt;&#x2F;section&gt;&lt;section&gt;
+  &lt;h3&gt;Conclusion&lt;&#x2F;h3&gt;
+  &lt;div style=&quot;text-align: left; font-size: 0.7em;&quot;&gt;
+    &lt;p&gt;&lt;strong&gt;Summary:&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Remote sensing is indispensable for HMA due to logistical inaccessibility.&lt;&#x2F;li&gt;
+      &lt;li&gt;Vast progress in 60 years: From simple photography to complex interferometry and altimetry.&lt;&#x2F;li&gt;
+      &lt;li&gt;&lt;strong&gt;Key Findings:&lt;&#x2F;strong&gt; Widespread mass loss (except Karakoram), permafrost degradation, and increasing hydrological variability.&lt;&#x2F;li&gt;
+    &lt;&#x2F;ul&gt;
+    &lt;p&gt;&lt;strong&gt;The Path Forward:&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Move from &quot;observation&quot; to &quot;integrated prediction.&quot;&lt;&#x2F;li&gt;
+      &lt;li&gt;Need for interdisciplinary approaches combining glaciology, hydrology, and computer science (AI).&lt;&#x2F;li&gt;
+      &lt;li&gt;Improve ground-based networks to validate the &quot;eyes in the sky.&quot;&lt;&#x2F;li&gt;
+    &lt;&#x2F;ul&gt;
+  &lt;&#x2F;div&gt;
+  &lt;aside class=&quot;notes&quot;&gt;
+    In conclusion, remote sensing has revolutionized our understanding of High Mountain Asia. We have moved from simple mapping to complex physical quantification of mass, energy, and flow.
+    The data paints a clear picture of a cryosphere in rapid transition. To manage the consequences—water security and hazards—we must now focus on integrating these diverse datasets into robust predictive models, supported by advanced AI and validated by strategic ground observations.
+  &lt;&#x2F;aside&gt;
+&lt;&#x2F;section&gt;&lt;section&gt;
+  &lt;h3&gt;Selected References&lt;&#x2F;h3&gt;
+  &lt;div style=&quot;font-size: 0.4em; text-align: left; columns: 2;&quot;&gt;
+    &lt;p&gt; Ye, Q., et al. &quot;Remote Sensing and Modeling of the Cryosphere...&quot; &lt;em&gt;Remote Sens.&lt;&#x2F;em&gt; 2024, 16, 1709.&lt;&#x2F;p&gt;
+    &lt;p&gt; Yao, T., et al. &quot;The imbalance of the Asian water tower.&quot; &lt;em&gt;Nat. Rev. Earth Environ.&lt;&#x2F;em&gt; 2022.&lt;&#x2F;p&gt;
+    &lt;p&gt; Shugar, D.H., et al. &quot;A massive rock and ice avalanche caused the 2021 disaster at Chamoli...&quot; &lt;em&gt;Science&lt;&#x2F;em&gt; 2021.&lt;&#x2F;p&gt;
+    &lt;p&gt; Hugonnet, R., et al. &quot;Accelerated global glacier mass loss...&quot; &lt;em&gt;Nature&lt;&#x2F;em&gt; 2021.&lt;&#x2F;p&gt;
+    &lt;p&gt; RGI Consortium. &quot;Randolph Glacier Inventory 7.0&quot; 2023.&lt;&#x2F;p&gt;
+    &lt;p&gt; Farinotti, D., et al. &quot;A consensus estimate for the ice thickness...&quot; &lt;em&gt;Nat. Geosci.&lt;&#x2F;em&gt; 2019.&lt;&#x2F;p&gt;
+    &lt;p&gt; Shean, D.E., et al. &quot;A Systematic, Regional Assessment of High Mountain Asia Glacier Mass Balance.&quot; &lt;em&gt;Front. Earth Sci.&lt;&#x2F;em&gt; 2020.&lt;&#x2F;p&gt;
+    &lt;p&gt; Kraaijenbrink, P.D.A., et al. &quot;Climate change decisive for Asia’s snow meltwater supply.&quot; &lt;em&gt;Nat. Clim. Chang.&lt;&#x2F;em&gt; 2021.&lt;&#x2F;p&gt;
+  &lt;&#x2F;div&gt;
+  &lt;aside class=&quot;notes&quot;&gt;
+    Here are the key references underpinning this presentation. The primary source is the review by Ye et al., 2024. Thank you for your attention.
+  &lt;&#x2F;aside&gt;
+&lt;&#x2F;section&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Satellite-Based Monitoring of Lake Ice Phenology</title>
+        <published>2024-05-20T00:00:00+00:00</published>
+        <updated>2024-05-20T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://yoganshsharma.github.io/slides/btp2/"/>
+        <id>https://yoganshsharma.github.io/slides/btp2/</id>
+        
+        <content type="html" xml:base="https://yoganshsharma.github.io/slides/btp2/">&lt;section&gt;
+  &lt;h2&gt;Remote Sensing of Lake Ice Phenology in HMA&lt;&#x2F;h2&gt;
+  &lt;h4&gt;BTP Methodology: A Multi-Sensor Observational Approach&lt;&#x2F;h4&gt;
+  &lt;hr&gt;
+  &lt;div style=&quot;font-size: 0.7em;&quot;&gt;
+    &lt;strong&gt;Focus:&lt;&#x2F;strong&gt; Data Fusion and Image Processing Algorithms&lt;br&gt;
+    An Observational Alternative to Physical Modeling
+  &lt;&#x2F;div&gt;
+  &lt;aside class=&quot;notes&quot;&gt;
+    This presentation details a Remote Sensing-focused BTP. We shift from VIC modeling to satellite big data, a practical approach for Google Colab that uses real-world observations to track cryospheric responses to climate change in High Mountain Asia.
+  &lt;&#x2F;aside&gt;
+&lt;&#x2F;section&gt;
+&lt;section&gt;
+  &lt;h3&gt;1. The Remote Sensing Objective&lt;&#x2F;h3&gt;
+  &lt;div style=&quot;font-size: 0.75em;&quot;&gt;
+    &lt;p&gt;Using satellite &quot;eyes&quot; to quantify the cryospheric response to warming:&lt;&#x2F;p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;Spatiotemporal Mapping:&lt;&#x2F;strong&gt; Tracking ice for thousands of lakes simultaneously.&lt;&#x2F;li&gt;
+      &lt;li&gt;&lt;strong&gt;Algorithm Comparison:&lt;&#x2F;strong&gt; Evaluating NDWI, NDSI, and Machine Learning.&lt;&#x2F;li&gt;
+      &lt;li&gt;&lt;strong&gt;Sensor Fusion:&lt;&#x2F;strong&gt; Combining Optical (Landsat&#x2F;MODIS) with Microwave (Sentinel-1).&lt;&#x2F;li&gt;
+      &lt;li&gt;&lt;strong&gt;Goal:&lt;&#x2F;strong&gt; Generate a 20+ year record of Freeze-up and Break-up dates.&lt;&#x2F;li&gt;
+    &lt;&#x2F;ul&gt;
+  &lt;&#x2F;div&gt;
+  &lt;aside class=&quot;notes&quot;&gt;
+    The objective is a high-resolution, long-term history of lake ice. Remote sensing allows us to compare algorithms in rugged terrain and use sensor fusion to maintain data continuity despite cloud cover.
+  &lt;&#x2F;aside&gt;
+&lt;&#x2F;section&gt;
+&lt;section&gt;
+  &lt;h3&gt;2. Theoretical Foundations: Lake Thermodynamics&lt;&#x2F;h3&gt;
+  &lt;div style=&quot;font-size: 0.65em;&quot;&gt;
+    &lt;div style=&quot;display: flex; justify-content: space-between;&quot;&gt;
+      &lt;div style=&quot;width: 48%;&quot;&gt;
+        &lt;h4&gt;The Energy Balance Equation&lt;&#x2F;h4&gt;
+        &lt;p&gt;Ice formation is governed by the net heat flux ($Q_{net}$):&lt;&#x2F;p&gt;
+        &lt;p&gt;&lt;em&gt;$Q_{net} = Q_{sw} + Q_{lw} + Q_{sh} + Q_{le} + Q_{g}$&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+        &lt;ul&gt;
+          &lt;li&gt;$Q_{sw}&#x2F;Q_{lw}$: Short&#x2F;Longwave radiation.&lt;&#x2F;li&gt;
+          &lt;li&gt;$Q_{sh}&#x2F;Q_{le}$: Sensible and Latent heat.&lt;&#x2F;li&gt;
+        &lt;&#x2F;ul&gt;
+      &lt;&#x2F;div&gt;
+      &lt;div style=&quot;width: 48%;&quot;&gt;
+        &lt;h4&gt;Thermal Stratification&lt;&#x2F;h4&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;strong&gt;Isothermal State:&lt;&#x2F;strong&gt; Water column reaches 4°C (max density).&lt;&#x2F;li&gt;
+          &lt;li&gt;&lt;strong&gt;Supercooling:&lt;&#x2F;strong&gt; Surface layer drops slightly below 0°C due to heat loss to atmosphere.&lt;&#x2F;li&gt;
+          &lt;li&gt;&lt;strong&gt;Latent Heat of Fusion:&lt;&#x2F;strong&gt; Energy released as water transitions to solid state.&lt;&#x2F;li&gt;
+        &lt;&#x2F;ul&gt;
+      &lt;&#x2F;div&gt;
+    &lt;&#x2F;div&gt;
+  &lt;&#x2F;div&gt;
+  &lt;aside class=&quot;notes&quot;&gt;
+    The physical foundation of phenology lies in thermodynamics. For a lake to freeze, it must lose its stored summer heat. This happens through radiative cooling and turbulent heat exchange. Once the entire water column reaches its maximum density at 4 degrees Celsius, the surface can supercool and eventually freeze as it releases the latent heat of fusion.
+  &lt;&#x2F;aside&gt;
+&lt;&#x2F;section&gt;
+&lt;section&gt;
+  &lt;h3&gt;3. Optical Data Workflow (GEE Based)&lt;&#x2F;h3&gt;
+  &lt;div style=&quot;display: flex; justify-content: space-between; font-size: 0.65em;&quot;&gt;
+    &lt;div style=&quot;width: 48%;&quot;&gt;
+      &lt;h4&gt;MODIS (Daily Tracking)&lt;&#x2F;h4&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;strong&gt;Product:&lt;&#x2F;strong&gt; MOD09GA (500m)&lt;&#x2F;li&gt;
+        &lt;li&gt;&lt;strong&gt;Role:&lt;&#x2F;strong&gt; High temporal frequency to catch the &lt;em&gt;exact day&lt;&#x2F;em&gt; of transition.&lt;&#x2F;li&gt;
+        &lt;li&gt;&lt;strong&gt;Challenge:&lt;&#x2F;strong&gt; Mixed pixel issues in narrow Himalayan valleys.&lt;&#x2F;li&gt;
+      &lt;&#x2F;ul&gt;
+    &lt;&#x2F;div&gt;
+    &lt;div style=&quot;width: 48%;&quot;&gt;
+      &lt;h4&gt;Landsat (Spatial Detail)&lt;&#x2F;h4&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;strong&gt;Product:&lt;&#x2F;strong&gt; Landsat 8&#x2F;9 OLI (30m)&lt;&#x2F;li&gt;
+        &lt;li&gt;&lt;strong&gt;Role:&lt;&#x2F;strong&gt; Mapping precise ice boundaries and small glacial lakes.&lt;&#x2F;li&gt;
+        &lt;li&gt;&lt;strong&gt;Challenge:&lt;&#x2F;strong&gt; 16-day revisit cycle; may miss the peak break-up event.&lt;&#x2F;li&gt;
+      &lt;&#x2F;ul&gt;
+    &lt;&#x2F;div&gt;
+  &lt;&#x2F;div&gt;
+  &lt;aside class=&quot;notes&quot;&gt;
+    Google Earth Engine processes MODIS for timing and Landsat for spatial detail. MODIS captures the rapid transition of the &quot;S-curve,&quot; while Landsat distinguishes small lake boundaries from the surrounding terrain.
+  &lt;&#x2F;aside&gt;
+&lt;&#x2F;section&gt;
+&lt;section&gt;
+  &lt;h3&gt;4. Physical Phenomena: Albedo Feedback&lt;&#x2F;h3&gt;
+  &lt;div style=&quot;font-size: 0.7em;&quot;&gt;
+    &lt;h4&gt;The Ice-Albedo Positive Feedback Loop&lt;&#x2F;h4&gt;
+    &lt;div style=&quot;display: flex; justify-content: space-between; align-items: center;&quot;&gt;
+      &lt;div style=&quot;width: 55%;&quot;&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;strong&gt;Water Albedo:&lt;&#x2F;strong&gt; ~0.06 (Absorbs 94% of solar radiation).&lt;&#x2F;li&gt;
+          &lt;li&gt;&lt;strong&gt;Ice&#x2F;Snow Albedo:&lt;&#x2F;strong&gt; 0.5 – 0.9 (Reflects up to 90%).&lt;&#x2F;li&gt;
+          &lt;li&gt;&lt;strong&gt;The Mechanism:&lt;&#x2F;strong&gt; As ice forms, reflectivity increases $\rightarrow$ Absorbed energy decreases $\rightarrow$ Surface cools further $\rightarrow$ Ice thickens.&lt;&#x2F;li&gt;
+          &lt;li&gt;&lt;strong&gt;Break-up:&lt;&#x2F;strong&gt; The process reverses, accelerating spring melt.&lt;&#x2F;li&gt;
+        &lt;&#x2F;ul&gt;
+      &lt;&#x2F;div&gt;
+      &lt;div style=&quot;width: 40%; border-left: 1px solid #ccc; padding-left: 10px;&quot;&gt;
+        &lt;p&gt;&lt;em&gt;Implication:&lt;&#x2F;em&gt; Small temperature changes trigger massive shifts in ice duration due to this self-reinforcing cycle.&lt;&#x2F;p&gt;
+      &lt;&#x2F;div&gt;
+    &lt;&#x2F;div&gt;
+  &lt;&#x2F;div&gt;
+  &lt;aside class=&quot;notes&quot;&gt;
+    A key physical phenomenon is the albedo feedback. Water is dark and absorbs heat, while ice is bright and reflects it. This feedback accelerates both the freezing process in early winter and the melting process in spring. It explains why lake ice is such a sensitive indicator of even minor climatic shifts.
+  &lt;&#x2F;aside&gt;
+&lt;&#x2F;section&gt;
+&lt;section&gt;
+  &lt;h3&gt;5. Microwave SAR: The Cloud Solution&lt;&#x2F;h3&gt;
+  &lt;div style=&quot;font-size: 0.7em;&quot;&gt;
+    &lt;p&gt;Using &lt;strong&gt;Sentinel-1 (C-band SAR)&lt;&#x2F;strong&gt; to bypass atmospheric interference:&lt;&#x2F;p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;Mechanism:&lt;&#x2F;strong&gt; Active radar pulses penetrate clouds and fog.&lt;&#x2F;li&gt;
+      &lt;li&gt;&lt;strong&gt;Backscatter Detection:&lt;&#x2F;strong&gt; 
+        &lt;ul&gt;
+          &lt;li&gt;&lt;em&gt;Water:&lt;&#x2F;em&gt; Low backscatter (Specular reflection, looks black).&lt;&#x2F;li&gt;
+          &lt;li&gt;&lt;em&gt;Ice:&lt;&#x2F;em&gt; High backscatter (Surface&#x2F;Volume scattering, looks bright).&lt;&#x2F;li&gt;
+        &lt;&#x2F;ul&gt;
+      &lt;&#x2F;li&gt;
+      &lt;li&gt;&lt;strong&gt;Application:&lt;&#x2F;strong&gt; Critical for HMA during persistent winter cloud cover.&lt;&#x2F;li&gt;
+    &lt;&#x2F;ul&gt;
+  &lt;&#x2F;div&gt;
+  &lt;aside class=&quot;notes&quot;&gt;
+    SAR is essential in the cloudy Himalayas. Radar backscatter is sensitive to surface roughness and dielectric properties; water acts as a specular reflector (sending the signal away), while ice causes volume scattering, returning a strong signal to the sensor.
+  &lt;&#x2F;aside&gt;
+&lt;&#x2F;section&gt;
+&lt;section&gt;
+  &lt;h3&gt;6. Automated Extraction Algorithms&lt;&#x2F;h3&gt;
+  &lt;div style=&quot;font-size: 0.7em;&quot;&gt;
+    &lt;div style=&quot;display: flex; justify-content: space-between;&quot;&gt;
+      &lt;div style=&quot;width: 48%;&quot;&gt;
+        &lt;h4&gt;Index-Based (NDWI)&lt;&#x2F;h4&gt;
+        &lt;p&gt;Uses the ratio of Green and NIR light to isolate water pixels.&lt;&#x2F;p&gt;
+        &lt;div style=&quot;background: #343454; padding: 5px; font-family: monospace; color: white;&quot;&gt;NDWI = (G - NIR) &#x2F; (G + NIR)&lt;&#x2F;div&gt;
+      &lt;&#x2F;div&gt;
+      &lt;div style=&quot;width: 48%;&quot;&gt;
+        &lt;h4&gt;ML Classification&lt;&#x2F;h4&gt;
+        &lt;p&gt;Using &lt;strong&gt;Random Forest&lt;&#x2F;strong&gt; or &lt;strong&gt;SVM&lt;&#x2F;strong&gt; to classify pixels into:&lt;&#x2F;p&gt;
+        &lt;ul&gt;
+          &lt;li&gt;Open Water&lt;&#x2F;li&gt;
+          &lt;li&gt;Clear Ice&lt;&#x2F;li&gt;
+          &lt;li&gt;Snow-covered Ice&lt;&#x2F;li&gt;
+        &lt;&#x2F;ul&gt;
+      &lt;&#x2F;div&gt;
+    &lt;&#x2F;div&gt;
+  &lt;&#x2F;div&gt;
+  &lt;aside class=&quot;notes&quot;&gt;
+    We use NDWI for spectral separation and Machine Learning for complex classification. Random Forest is particularly effective at distinguishing between snow-covered ice and actual snow on land, a common source of error in high-altitude RS studies.
+  &lt;&#x2F;aside&gt;
+&lt;&#x2F;section&gt;
+&lt;section&gt;
+  &lt;h3&gt;7. Handling Topographic Effects&lt;&#x2F;h3&gt;
+  &lt;div style=&quot;font-size: 0.7em;&quot;&gt;
+    &lt;p&gt;High relief in HMA causes &quot;Mountain Shadows&quot; that mimic water pixels:&lt;&#x2F;p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;Digital Elevation Model (DEM):&lt;&#x2F;strong&gt; SRTM or ASTER DEM integration.&lt;&#x2F;li&gt;
+      &lt;li&gt;&lt;strong&gt;Shadow Masking:&lt;&#x2F;strong&gt; Calculating sun azimuth and zenith to mask shaded regions.&lt;&#x2F;li&gt;
+      &lt;li&gt;&lt;strong&gt;Slope Correction:&lt;&#x2F;strong&gt; Adjusting reflectance values based on terrain angle.&lt;&#x2F;li&gt;
+      &lt;li class=&quot;fragment&quot;&gt;&lt;strong&gt;Outcome:&lt;&#x2F;strong&gt; Prevents false &quot;Break-up&quot; detection caused by seasonal shadow shifts.&lt;&#x2F;li&gt;
+    &lt;&#x2F;ul&gt;
+  &lt;&#x2F;div&gt;
+  &lt;aside class=&quot;notes&quot;&gt;
+    Deep shadows in the Himalayas mimic the low reflectance of water. By using DEMs and solar geometry, we mask these areas, ensuring that seasonal changes in shadow length aren&#x27;t misidentified as changes in ice cover.
+  &lt;&#x2F;aside&gt;
+&lt;&#x2F;section&gt;
+&lt;section&gt;
+  &lt;h3&gt;8. Physical Phenomena: Ice Decay Mechanisms&lt;&#x2F;h3&gt;
+  &lt;div style=&quot;font-size: 0.7em;&quot;&gt;
+    &lt;div style=&quot;display: flex; justify-content: space-between;&quot;&gt;
+      &lt;div style=&quot;width: 48%;&quot;&gt;
+        &lt;h4&gt;Thermal Decay&lt;&#x2F;h4&gt;
+        &lt;ul&gt;
+          &lt;li&gt;Solar radiation penetrates ice, causing internal melting.&lt;&#x2F;li&gt;
+          &lt;li&gt;&lt;strong&gt;Candling:&lt;&#x2F;strong&gt; Vertical crystals separate, weakening the structure even if the ice remains thick.&lt;&#x2F;li&gt;
+        &lt;&#x2F;ul&gt;
+      &lt;&#x2F;div&gt;
+      &lt;div style=&quot;width: 48%;&quot;&gt;
+        &lt;h4&gt;Mechanical Decay&lt;&#x2F;h4&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;strong&gt;Wind Forcing:&lt;&#x2F;strong&gt; Kinetic energy breaks weakened ice sheets.&lt;&#x2F;li&gt;
+          &lt;li&gt;&lt;strong&gt;Albedo Reduction:&lt;&#x2F;strong&gt; Melt ponds form on surface, lowering albedo and accelerating heat absorption.&lt;&#x2F;li&gt;
+        &lt;&#x2F;ul&gt;
+      &lt;&#x2F;div&gt;
+    &lt;&#x2F;div&gt;
+  &lt;&#x2F;div&gt;
+  &lt;aside class=&quot;notes&quot;&gt;
+    The &quot;Break-up&quot; period involves both thermal and mechanical decay. Internal melting, known as candling, can make ice dangerous even when it looks solid. Wind plays a secondary but vital role by physically breaking up these weakened sheets and moving them toward the warmer shores.
+  &lt;&#x2F;aside&gt;
+&lt;&#x2F;section&gt;
+&lt;section&gt;
+  &lt;h3&gt;9. Data Fusion &amp; Time-Series Smoothing&lt;&#x2F;h3&gt;
+  &lt;div style=&quot;font-size: 0.7em;&quot;&gt;
+    &lt;p&gt;Constructing a continuous &quot;Ice Fraction&quot; curve:&lt;&#x2F;p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;Savitzky-Golay Filter:&lt;&#x2F;strong&gt; Smoothing noise in the daily MODIS time-series.&lt;&#x2F;li&gt;
+      &lt;li&gt;&lt;strong&gt;Sigmoid Function Fitting:&lt;&#x2F;strong&gt; Mathematically defining the FUS, FUE, BUS, and BUE dates.&lt;&#x2F;li&gt;
+      &lt;li&gt;&lt;strong&gt;SAR Integration:&lt;&#x2F;strong&gt; Replacing cloud-masked optical pixels with SAR-derived ice states.&lt;&#x2F;li&gt;
+    &lt;&#x2F;ul&gt;
+  &lt;&#x2F;div&gt;
+  &lt;aside class=&quot;notes&quot;&gt;
+    We smooth noisy daily data using the Savitzky-Golay filter and then fit a Sigmoid function. This curve provides a mathematical &quot;inflection point,&quot; allowing us to identify transition dates with much higher precision than manual inspection.
+  &lt;&#x2F;aside&gt;
+&lt;&#x2F;section&gt;
+&lt;section&gt;
+  &lt;h3&gt;10. Validation via High-Resolution Imagery&lt;&#x2F;h3&gt;
+  &lt;div style=&quot;font-size: 0.7em;&quot;&gt;
+    &lt;p&gt;Ensuring accuracy in the absence of ground stations:&lt;&#x2F;p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;PlanetScope&#x2F;SkySat:&lt;&#x2F;strong&gt; Using sub-meter resolution imagery for specific case studies.&lt;&#x2F;li&gt;
+      &lt;li&gt;&lt;strong&gt;Manual Digitization:&lt;&#x2F;strong&gt; Creating &quot;Gold Standard&quot; masks for 10% of the dataset.&lt;&#x2F;li&gt;
+      &lt;li&gt;&lt;strong&gt;Error Metrics:&lt;&#x2F;strong&gt; Calculating Root Mean Square Error (RMSE) and Mean Absolute Error (MAE) between automated and manual dates.&lt;&#x2F;li&gt;
+    &lt;&#x2F;ul&gt;
+  &lt;&#x2F;div&gt;
+  &lt;aside class=&quot;notes&quot;&gt;
+    Validation is the &quot;ground truth&quot; step. We use sub-meter imagery from commercial satellites to verify our automated results, calculating RMSE to ensure our model&#x27;s uncertainty is within acceptable scientific limits.
+  &lt;&#x2F;aside&gt;
+&lt;&#x2F;section&gt;
+&lt;section&gt;
+  &lt;h3&gt;11. Reporting &amp; Statistical Analysis&lt;&#x2F;h3&gt;
+  &lt;div style=&quot;font-size: 0.7em;&quot;&gt;
+    &lt;table style=&quot;width: 100%;&quot;&gt;
+      &lt;thead&gt;
+        &lt;tr&gt;
+          &lt;th&gt;Analysis&lt;&#x2F;th&gt;
+          &lt;th&gt;Technique&lt;&#x2F;th&gt;
+          &lt;th&gt;Goal&lt;&#x2F;th&gt;
+        &lt;&#x2F;tr&gt;
+      &lt;&#x2F;thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Trend Test&lt;&#x2F;strong&gt;&lt;&#x2F;td&gt;
+          &lt;td&gt;Mann-Kendall&lt;&#x2F;td&gt;
+          &lt;td&gt;Confirm if melt is getting earlier over 20 years.&lt;&#x2F;td&gt;
+        &lt;&#x2F;tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Magnitude&lt;&#x2F;strong&gt;&lt;&#x2F;td&gt;
+          &lt;td&gt;Theil-Sen Slope&lt;&#x2F;td&gt;
+          &lt;td&gt;Quantify rate of change (e.g., days per decade).&lt;&#x2F;td&gt;
+        &lt;&#x2F;tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Climatic Driver&lt;&#x2F;strong&gt;&lt;&#x2F;td&gt;
+          &lt;td&gt;ERA5 Correlation&lt;&#x2F;td&gt;
+          &lt;td&gt;Linking ice duration to Air Temperature anomalies.&lt;&#x2F;td&gt;
+        &lt;&#x2F;tr&gt;
+      &lt;&#x2F;tbody&gt;
+    &lt;&#x2F;table&gt;
+  &lt;&#x2F;div&gt;
+  &lt;aside class=&quot;notes&quot;&gt;
+    We use the Mann-Kendall test for trend significance and Theil-Sen for the rate of change. Finally, we correlate these with ERA5 reanalysis data to see how closely lake ice mirrors global warming signals.
+  &lt;&#x2F;aside&gt;
+&lt;&#x2F;section&gt;
+&lt;section&gt;
+  &lt;h3&gt;Summary: Why RS-Focus?&lt;&#x2F;h3&gt;
+  &lt;div style=&quot;font-size: 0.75em;&quot;&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;Scalability:&lt;&#x2F;strong&gt; Monitor 500+ lakes across the Himalayas simultaneously.&lt;&#x2F;li&gt;
+      &lt;li&gt;&lt;strong&gt;Practicality:&lt;&#x2F;strong&gt; Entirely implementable in Python&#x2F;Google Colab.&lt;&#x2F;li&gt;
+      &lt;li&gt;&lt;strong&gt;Impact:&lt;&#x2F;strong&gt; Directly visualizes the &quot;shrinking cryosphere&quot; using real evidence.&lt;&#x2F;li&gt;
+      &lt;li&gt;&lt;strong&gt;BTP Value:&lt;&#x2F;strong&gt; Demonstrates high proficiency in Geospatial Big Data.&lt;&#x2F;li&gt;
+    &lt;&#x2F;ul&gt;
+  &lt;&#x2F;div&gt;
+  &lt;aside class=&quot;notes&quot;&gt;
+    Remote Sensing is the most practical path for this BTP. It allows large-scale analysis, can be performed in the cloud, and demonstrates advanced data science skills highly valued in academia and industry.
+  &lt;&#x2F;aside&gt;
+&lt;&#x2F;section&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Lake Ice Phenology in High Mountain Asia</title>
+        <published>2024-04-29T00:00:00+00:00</published>
+        <updated>2024-04-29T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://yoganshsharma.github.io/slides/btp/"/>
+        <id>https://yoganshsharma.github.io/slides/btp/</id>
+        
+        <content type="html" xml:base="https://yoganshsharma.github.io/slides/btp/">&lt;section&gt;
+  &lt;h2&gt;Lake Ice Phenology in High Mountain Asia (HMA)&lt;&#x2F;h2&gt;
+  &lt;h4&gt;BTP Procedure, Methods, and Reporting Workflow&lt;&#x2F;h4&gt;
+  &lt;hr&gt;
+  &lt;div style=&quot;font-size: 0.7em;&quot;&gt;
+    &lt;strong&gt;Academic Presentation&lt;&#x2F;strong&gt;&lt;br&gt;
+    Integration of Satellite Remote Sensing and Hydrological Modeling
+  &lt;&#x2F;div&gt;
+  &lt;aside class=&quot;notes&quot;&gt;
+    This presentation outlines the systematic procedure for monitoring lake ice phenology in High Mountain Asia, often called the &quot;Third Pole.&quot; We will cover the standard Bachelor of Technology Project (BTP) workflow, from data acquisition to statistical reporting, focusing on the unique challenges of the Himalayan region.
+  &lt;&#x2F;aside&gt;
+&lt;&#x2F;section&gt;
+&lt;section&gt;
+  &lt;h3&gt;1. Core Phenology Parameters&lt;&#x2F;h3&gt;
+  &lt;div style=&quot;font-size: 0.75em;&quot;&gt;
+    &lt;p&gt;The workflow targets four critical transition dates and one duration metric:&lt;&#x2F;p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;Freeze-up Start (FUS):&lt;&#x2F;strong&gt; Date when ice first appears on the lake.&lt;&#x2F;li&gt;
+      &lt;li&gt;&lt;strong&gt;Freeze-up End (FUE):&lt;&#x2F;strong&gt; Date when the lake is completely ice-covered.&lt;&#x2F;li&gt;
+      &lt;li&gt;&lt;strong&gt;Break-up Start (BUS):&lt;&#x2F;strong&gt; Date when ice begins to melt&#x2F;open water appears.&lt;&#x2F;li&gt;
+      &lt;li&gt;&lt;strong&gt;Break-up End (BUE):&lt;&#x2F;strong&gt; Date when the lake is entirely ice-free.&lt;&#x2F;li&gt;
+      &lt;li&gt;&lt;strong&gt;Ice Duration:&lt;&#x2F;strong&gt; The total number of days between FUE and BUS.&lt;&#x2F;li&gt;
+    &lt;&#x2F;ul&gt;
+  &lt;&#x2F;div&gt;
+  &lt;aside class=&quot;notes&quot;&gt;
+    In any phenology study, defining these parameters is the first step. These dates are sensitive indicators of local climate change. In HMA, the &quot;Ice Duration&quot; is a primary metric used to assess the warming trends affecting the Asian water tower.
+  &lt;&#x2F;aside&gt;
+&lt;&#x2F;section&gt;
+&lt;section&gt;
+  &lt;h3&gt;2. Methodological Workflow: Data Sources&lt;&#x2F;h3&gt;
+  &lt;div style=&quot;display: flex; justify-content: space-between; font-size: 0.65em;&quot;&gt;
+    &lt;div style=&quot;width: 48%;&quot;&gt;
+      &lt;h4&gt;Optical Remote Sensing&lt;&#x2F;h4&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;strong&gt;MODIS (Daily):&lt;&#x2F;strong&gt; High temporal resolution for capturing rapid transitions.&lt;&#x2F;li&gt;
+        &lt;li&gt;&lt;strong&gt;Landsat (16-day):&lt;&#x2F;strong&gt; High spatial resolution (30m) for smaller alpine lakes.&lt;&#x2F;li&gt;
+        &lt;li&gt;&lt;strong&gt;Sentinel-2:&lt;&#x2F;strong&gt; Advanced spectral bands for ice&#x2F;snow differentiation.&lt;&#x2F;li&gt;
+      &lt;&#x2F;ul&gt;
+    &lt;&#x2F;div&gt;
+    &lt;div style=&quot;width: 48%;&quot;&gt;
+      &lt;h4&gt;Microwave &amp; Other Data&lt;&#x2F;h4&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;strong&gt;SAR (Sentinel-1):&lt;&#x2F;strong&gt; Operates through cloud cover and polar darkness.&lt;&#x2F;li&gt;
+        &lt;li&gt;&lt;strong&gt;Passive Microwave:&lt;&#x2F;strong&gt; Long-term records (SSM&#x2F;I) for climate-scale trends.&lt;&#x2F;li&gt;
+        &lt;li&gt;&lt;strong&gt;ERA5&#x2F;Reanalysis:&lt;&#x2F;strong&gt; Meteorological forcing for physical models.&lt;&#x2F;li&gt;
+      &lt;&#x2F;ul&gt;
+    &lt;&#x2F;div&gt;
+  &lt;&#x2F;div&gt;
+  &lt;aside class=&quot;notes&quot;&gt;
+    The HMA region presents a unique challenge: frequent cloud cover. Therefore, a robust BTP procedure must integrate optical data for clarity and microwave SAR data to ensure temporal continuity when clouds block the view. We also rely on reanalysis data like ERA5 to provide the temperature and wind variables needed for modeling.
+  &lt;&#x2F;aside&gt;
+&lt;&#x2F;section&gt;
+&lt;section&gt;
+  &lt;h3&gt;3. Extraction Procedure: The NDWI Method&lt;&#x2F;h3&gt;
+  &lt;div style=&quot;font-size: 0.7em;&quot;&gt;
+    &lt;p&gt;The primary automated method for water&#x2F;ice discrimination:&lt;&#x2F;p&gt;
+    &lt;div style=&quot;background: #a0a0a0; padding: 10px; border-radius: 5px; font-family: monospace;&quot;&gt;
+      NDWI = (Green - NIR) &#x2F; (Green + NIR)
+    &lt;&#x2F;div&gt;
+    &lt;ul style=&quot;margin-top: 15px;&quot;&gt;
+      &lt;li&gt;&lt;strong&gt;Water:&lt;&#x2F;strong&gt; High NDWI values (typically &gt; 0).&lt;&#x2F;li&gt;
+      &lt;li&gt;&lt;strong&gt;Ice&#x2F;Snow:&lt;&#x2F;strong&gt; Low or negative NDWI values.&lt;&#x2F;li&gt;
+      &lt;li&gt;&lt;strong&gt;Thresholding:&lt;&#x2F;strong&gt; Dynamic thresholds are often required to account for &quot;rough terrain&quot; and mountain shadows.&lt;&#x2F;li&gt;
+      &lt;li class=&quot;fragment&quot;&gt;&lt;strong&gt;Refinement:&lt;&#x2F;strong&gt; Cross-referencing with the &lt;em&gt;Normalized Difference Snow Index (NDSI)&lt;&#x2F;em&gt; to distinguish ice from surrounding snowpack.&lt;&#x2F;li&gt;
+    &lt;&#x2F;ul&gt;
+  &lt;&#x2F;div&gt;
+  &lt;aside class=&quot;notes&quot;&gt;
+    The Normalized Difference Water Index is the workhorse of lake ice remote sensing. However, in the Himalayas, a simple threshold often fails due to complex topography. Researchers must use dynamic thresholding or machine learning classifiers to accurately separate water from ice in high-altitude, shaded basins.
+  &lt;&#x2F;aside&gt;
+&lt;&#x2F;section&gt;
+&lt;section&gt;
+  &lt;h3&gt;4. Physical Modeling: The VIC Approach&lt;&#x2F;h3&gt;
+  &lt;div style=&quot;font-size: 0.7em;&quot;&gt;
+    &lt;h4&gt;Variable Infiltration Capacity (VIC) Model&lt;&#x2F;h4&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;Mechanism:&lt;&#x2F;strong&gt; Simulates the lake energy balance using a 1-D thermodynamic lake model.&lt;&#x2F;li&gt;
+      &lt;li&gt;&lt;strong&gt;Inputs:&lt;&#x2F;strong&gt; Surface air temperature, precipitation, wind speed, and radiation.&lt;&#x2F;li&gt;
+      &lt;li&gt;&lt;strong&gt;Process:&lt;&#x2F;strong&gt; 
+        &lt;ol&gt;
+          &lt;li&gt;Calculates vertical temperature profiles.&lt;&#x2F;li&gt;
+          &lt;li&gt;Simulates heat storage and exchange with the atmosphere.&lt;&#x2F;li&gt;
+          &lt;li&gt;Predicts ice thickness and phenology dates based on energy flux.&lt;&#x2F;li&gt;
+        &lt;&#x2F;ol&gt;
+      &lt;&#x2F;li&gt;
+    &lt;&#x2F;ul&gt;
+  &lt;&#x2F;div&gt;
+  &lt;aside class=&quot;notes&quot;&gt;
+    When satellite data is missing or we want to understand the &quot;why&quot; behind the trends, we use physical models like VIC. This model treats the lake as a series of thermal layers, calculating how heat enters and leaves. It is particularly useful in HMA for simulating lakes where ground-based weather stations are non-existent.
+  &lt;&#x2F;aside&gt;
+&lt;&#x2F;section&gt;
+&lt;section&gt;
+  &lt;h3&gt;5. Data Analysis &amp; Reporting Workflow&lt;&#x2F;h3&gt;
+  &lt;div style=&quot;font-size: 0.7em;&quot;&gt;
+    &lt;table style=&quot;width: 100%;&quot;&gt;
+      &lt;thead&gt;
+        &lt;tr&gt;
+          &lt;th&gt;Step&lt;&#x2F;th&gt;
+          &lt;th&gt;Technique &#x2F; Tool&lt;&#x2F;th&gt;
+          &lt;th&gt;Outcome&lt;&#x2F;th&gt;
+        &lt;&#x2F;tr&gt;
+      &lt;&#x2F;thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Trend Analysis&lt;&#x2F;strong&gt;&lt;&#x2F;td&gt;
+          &lt;td&gt;Mann-Kendall Test&lt;&#x2F;td&gt;
+          &lt;td&gt;Detects if phenology dates are shifting significantly.&lt;&#x2F;td&gt;
+        &lt;&#x2F;tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Magnitude&lt;&#x2F;strong&gt;&lt;&#x2F;td&gt;
+          &lt;td&gt;Theil-Sen Estimator&lt;&#x2F;td&gt;
+          &lt;td&gt;Quantifies the rate of change (e.g., days&#x2F;decade).&lt;&#x2F;td&gt;
+        &lt;&#x2F;tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Correlation&lt;&#x2F;strong&gt;&lt;&#x2F;td&gt;
+          &lt;td&gt;Pearson&#x2F;Spearman&lt;&#x2F;td&gt;
+          &lt;td&gt;Links ice dates to temperature anomalies or ENSO.&lt;&#x2F;td&gt;
+        &lt;&#x2F;tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Validation&lt;&#x2F;strong&gt;&lt;&#x2F;td&gt;
+          &lt;td&gt;RMSE &#x2F; R²&lt;&#x2F;td&gt;
+          &lt;td&gt;Compares satellite&#x2F;model dates against in-situ data.&lt;&#x2F;td&gt;
+        &lt;&#x2F;tr&gt;
+      &lt;&#x2F;tbody&gt;
+    &lt;&#x2F;table&gt;
+  &lt;&#x2F;div&gt;
+  &lt;aside class=&quot;notes&quot;&gt;
+    Reporting is the final academic requirement. We use the Mann-Kendall test to confirm if the trends we see—like earlier break-up—are statistically significant. We also correlate these findings with climate indices to see if events like El Niño are influencing the Tibetan Plateau&#x27;s ice cycles.
+  &lt;&#x2F;aside&gt;
+&lt;&#x2F;section&gt;
+&lt;section&gt;
+  &lt;h3&gt;6. Challenges &amp; Regional Limitations&lt;&#x2F;h3&gt;
+  &lt;div style=&quot;font-size: 0.7em;&quot;&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;Paucity of Ground Data:&lt;&#x2F;strong&gt; Lack of in-situ verification (e.g., actual ice thickness measurements).&lt;&#x2F;li&gt;
+      &lt;li&gt;&lt;strong&gt;Mountain Shadowing:&lt;&#x2F;strong&gt; High relief leads to false &quot;water&quot; classifications in optical imagery.&lt;&#x2F;li&gt;
+      &lt;li&gt;&lt;strong&gt;Complex Scattering:&lt;&#x2F;strong&gt; SAR signals are complicated by snow depth and &quot;unknown mechanisms underneath the surface.&quot;&lt;&#x2F;li&gt;
+      &lt;li&gt;&lt;strong&gt;Atmospheric Effects:&lt;&#x2F;strong&gt; High altitude requires specific radiometric corrections to avoid data bias.&lt;&#x2F;li&gt;
+    &lt;&#x2F;ul&gt;
+  &lt;&#x2F;div&gt;
+  &lt;aside class=&quot;notes&quot;&gt;
+    It is vital to acknowledge the limitations in a BTP report. In the Himalayas, terrain is our biggest enemy. Shadows from 7,000-meter peaks can look like water to a satellite, and the lack of ground stations means we are often comparing one model to another rather than to reality.
+  &lt;&#x2F;aside&gt;
+&lt;&#x2F;section&gt;
+&lt;section&gt;
+  &lt;h3&gt;Conclusion: The Future of HMA Monitoring&lt;&#x2F;h3&gt;
+  &lt;div style=&quot;font-size: 0.75em;&quot;&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;Fusion:&lt;&#x2F;strong&gt; Combining multi-source sensors (Optical + SAR) is now the standard.&lt;&#x2F;li&gt;
+      &lt;li&gt;&lt;strong&gt;Deep Learning:&lt;&#x2F;strong&gt; Transitioning from manual thresholds to CNNs for ice detection.&lt;&#x2F;li&gt;
+      &lt;li&gt;&lt;strong&gt;Climate Linkage:&lt;&#x2F;strong&gt; High Mountain Asia is showing a clear trend of shorter ice duration, impacting downstream water availability.&lt;&#x2F;li&gt;
+    &lt;&#x2F;ul&gt;
+  &lt;&#x2F;div&gt;
+  &lt;aside class=&quot;notes&quot;&gt;
+    In conclusion, the study of lake ice phenology in HMA is evolving from simple satellite observation to complex data fusion and physical modeling. As an expert, I recommend focusing your BTP on this integration to produce the most accurate and scientifically valid results for this critical region.
+  &lt;&#x2F;aside&gt;
+&lt;&#x2F;section&gt;
+</content>
+        
+    </entry>
+</feed>

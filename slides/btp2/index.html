@@ -1,0 +1,351 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://yoganshsharma.github.io/js/theme.min.js" integrity="sha384-pb++s6uBRKaQv+iAXpgA/H3IlpLZdO14tTwuCI7uXmz4aaZdByoCcM+6BhynMq/1"></script>
+  <link rel="stylesheet" href="https://yoganshsharma.github.io/abridge.css?h=51e083029a1e0f7e659d" />
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="base" content="https://yoganshsharma.github.io" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="theme-color" content="#333333" />
+  <meta name="msapplication-TileColor" content="#333333" />
+  <link rel="manifest" href="https://yoganshsharma.github.io/manifest.min.json" />
+  <link rel="mask-icon" href="https://yoganshsharma.github.io/safari-pinned-tab.svg" color="#00ffaa" />
+  <link rel="icon" type="image/svg+xml" href="https://yoganshsharma.github.io/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://yoganshsharma.github.io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://yoganshsharma.github.io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://yoganshsharma.github.io/favicon-16x16.png" />
+  <link rel="alternate" type="application/atom+xml" title="Yogansh Atom Feed" href="https://yoganshsharma.github.io/atom.xml" /><meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <title>Satellite-Based Monitoring of Lake Ice Phenology | Yogansh</title>
+  <meta name="author" content="Yogansh Sharma" />
+  <meta name="copyright" content="Yogansh" />
+  <meta name="description" content="Yogansh&#x27;s Personal Space on Internet" />
+  <link rel="canonical" href="https://yoganshsharma.github.io/slides/btp2/" />
+  <meta name="keywords" content="Abridge, Abridge.css, Zola, Theme, Zola Theme, getzola, Semantic Html, Fast, lightweight" />
+  <meta name="google-site-verification" content="Your Google Site verification code." />
+  <meta name="msvalidate.01" content="Your Bing Site verification code." />
+  <meta property="og:url" content="https://yoganshsharma.github.io/slides/btp2/" />
+  <meta name="twitter:url" content="https://yoganshsharma.github.io/slides/btp2/" />
+  <meta property="og:description" content="Yogansh&#x27;s Personal Space on Internet" />
+  <meta name="twitter:description" content="Yogansh&#x27;s Personal Space on Internet" />
+  <meta property="og:title" content="Satellite-Based Monitoring of Lake Ice Phenology | Yogansh" />
+  <meta name="twitter:title" content="Satellite-Based Monitoring of Lake Ice Phenology | Yogansh" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://yoganshsharma.github.io/banner.png" />
+  <meta property="og:image" content="https://yoganshsharma.github.io/banner.png" />
+  <meta property="og:site_name" content="Yogansh" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="website" />
+  <meta property="og:updated_time" content="2024-05-20" />
+  <meta name="twitter:site" content="@yogansh1004" />
+  <meta name="twitter:creator" content="@yogansh1004" />
+  <script defer src="https://yoganshsharma.github.io/js/abridge.min.js?h=e0f9a881a665c86cce9c" integrity="sha384-QF67y7RnPkuDrJNQqn3/7nYxqxWkW/qHI7zN0WTES1aXbf+TotoByRBb835fUE6U"></script>
+  <noscript><link rel="stylesheet" href="https://yoganshsharma.github.io/nojs.css" /></noscript>
+
+  <link rel="stylesheet" href="/reveal/dist/reset.css">
+  <link rel="stylesheet" href="/reveal/dist/reveal.css">
+  <link rel="stylesheet" href="/reveal/dist/theme/dracula.css">
+
+  <!-- Theme used for syntax highlighted code -->
+  <link rel="stylesheet" href="/reveal/plugin/highlight/monokai.css">
+  <style>
+      ul {
+        font-size: 0.8em;
+      }
+      .img-caption { font-size: 0.4em; text-align: center;  margin-top: 5px; }
+  </style>
+
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+        <section>
+  <h2>Remote Sensing of Lake Ice Phenology in HMA</h2>
+  <h4>BTP Methodology: A Multi-Sensor Observational Approach</h4>
+  <hr>
+  <div style="font-size: 0.7em;">
+    <strong>Focus:</strong> Data Fusion and Image Processing Algorithms<br>
+    An Observational Alternative to Physical Modeling
+  </div>
+  <aside class="notes">
+    This presentation details a Remote Sensing-focused BTP. We shift from VIC modeling to satellite big data, a practical approach for Google Colab that uses real-world observations to track cryospheric responses to climate change in High Mountain Asia.
+  </aside>
+</section>
+<section>
+  <h3>1. The Remote Sensing Objective</h3>
+  <div style="font-size: 0.75em;">
+    <p>Using satellite "eyes" to quantify the cryospheric response to warming:</p>
+    <ul>
+      <li><strong>Spatiotemporal Mapping:</strong> Tracking ice for thousands of lakes simultaneously.</li>
+      <li><strong>Algorithm Comparison:</strong> Evaluating NDWI, NDSI, and Machine Learning.</li>
+      <li><strong>Sensor Fusion:</strong> Combining Optical (Landsat/MODIS) with Microwave (Sentinel-1).</li>
+      <li><strong>Goal:</strong> Generate a 20+ year record of Freeze-up and Break-up dates.</li>
+    </ul>
+  </div>
+  <aside class="notes">
+    The objective is a high-resolution, long-term history of lake ice. Remote sensing allows us to compare algorithms in rugged terrain and use sensor fusion to maintain data continuity despite cloud cover.
+  </aside>
+</section>
+<section>
+  <h3>2. Theoretical Foundations: Lake Thermodynamics</h3>
+  <div style="font-size: 0.65em;">
+    <div style="display: flex; justify-content: space-between;">
+      <div style="width: 48%;">
+        <h4>The Energy Balance Equation</h4>
+        <p>Ice formation is governed by the net heat flux ($Q_{net}$):</p>
+        <p><em>$Q_{net} = Q_{sw} + Q_{lw} + Q_{sh} + Q_{le} + Q_{g}$</em></p>
+        <ul>
+          <li>$Q_{sw}/Q_{lw}$: Short/Longwave radiation.</li>
+          <li>$Q_{sh}/Q_{le}$: Sensible and Latent heat.</li>
+        </ul>
+      </div>
+      <div style="width: 48%;">
+        <h4>Thermal Stratification</h4>
+        <ul>
+          <li><strong>Isothermal State:</strong> Water column reaches 4°C (max density).</li>
+          <li><strong>Supercooling:</strong> Surface layer drops slightly below 0°C due to heat loss to atmosphere.</li>
+          <li><strong>Latent Heat of Fusion:</strong> Energy released as water transitions to solid state.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <aside class="notes">
+    The physical foundation of phenology lies in thermodynamics. For a lake to freeze, it must lose its stored summer heat. This happens through radiative cooling and turbulent heat exchange. Once the entire water column reaches its maximum density at 4 degrees Celsius, the surface can supercool and eventually freeze as it releases the latent heat of fusion.
+  </aside>
+</section>
+<section>
+  <h3>3. Optical Data Workflow (GEE Based)</h3>
+  <div style="display: flex; justify-content: space-between; font-size: 0.65em;">
+    <div style="width: 48%;">
+      <h4>MODIS (Daily Tracking)</h4>
+      <ul>
+        <li><strong>Product:</strong> MOD09GA (500m)</li>
+        <li><strong>Role:</strong> High temporal frequency to catch the <em>exact day</em> of transition.</li>
+        <li><strong>Challenge:</strong> Mixed pixel issues in narrow Himalayan valleys.</li>
+      </ul>
+    </div>
+    <div style="width: 48%;">
+      <h4>Landsat (Spatial Detail)</h4>
+      <ul>
+        <li><strong>Product:</strong> Landsat 8/9 OLI (30m)</li>
+        <li><strong>Role:</strong> Mapping precise ice boundaries and small glacial lakes.</li>
+        <li><strong>Challenge:</strong> 16-day revisit cycle; may miss the peak break-up event.</li>
+      </ul>
+    </div>
+  </div>
+  <aside class="notes">
+    Google Earth Engine processes MODIS for timing and Landsat for spatial detail. MODIS captures the rapid transition of the "S-curve," while Landsat distinguishes small lake boundaries from the surrounding terrain.
+  </aside>
+</section>
+<section>
+  <h3>4. Physical Phenomena: Albedo Feedback</h3>
+  <div style="font-size: 0.7em;">
+    <h4>The Ice-Albedo Positive Feedback Loop</h4>
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <div style="width: 55%;">
+        <ul>
+          <li><strong>Water Albedo:</strong> ~0.06 (Absorbs 94% of solar radiation).</li>
+          <li><strong>Ice/Snow Albedo:</strong> 0.5 – 0.9 (Reflects up to 90%).</li>
+          <li><strong>The Mechanism:</strong> As ice forms, reflectivity increases $\rightarrow$ Absorbed energy decreases $\rightarrow$ Surface cools further $\rightarrow$ Ice thickens.</li>
+          <li><strong>Break-up:</strong> The process reverses, accelerating spring melt.</li>
+        </ul>
+      </div>
+      <div style="width: 40%; border-left: 1px solid #ccc; padding-left: 10px;">
+        <p><em>Implication:</em> Small temperature changes trigger massive shifts in ice duration due to this self-reinforcing cycle.</p>
+      </div>
+    </div>
+  </div>
+  <aside class="notes">
+    A key physical phenomenon is the albedo feedback. Water is dark and absorbs heat, while ice is bright and reflects it. This feedback accelerates both the freezing process in early winter and the melting process in spring. It explains why lake ice is such a sensitive indicator of even minor climatic shifts.
+  </aside>
+</section>
+<section>
+  <h3>5. Microwave SAR: The Cloud Solution</h3>
+  <div style="font-size: 0.7em;">
+    <p>Using <strong>Sentinel-1 (C-band SAR)</strong> to bypass atmospheric interference:</p>
+    <ul>
+      <li><strong>Mechanism:</strong> Active radar pulses penetrate clouds and fog.</li>
+      <li><strong>Backscatter Detection:</strong> 
+        <ul>
+          <li><em>Water:</em> Low backscatter (Specular reflection, looks black).</li>
+          <li><em>Ice:</em> High backscatter (Surface/Volume scattering, looks bright).</li>
+        </ul>
+      </li>
+      <li><strong>Application:</strong> Critical for HMA during persistent winter cloud cover.</li>
+    </ul>
+  </div>
+  <aside class="notes">
+    SAR is essential in the cloudy Himalayas. Radar backscatter is sensitive to surface roughness and dielectric properties; water acts as a specular reflector (sending the signal away), while ice causes volume scattering, returning a strong signal to the sensor.
+  </aside>
+</section>
+<section>
+  <h3>6. Automated Extraction Algorithms</h3>
+  <div style="font-size: 0.7em;">
+    <div style="display: flex; justify-content: space-between;">
+      <div style="width: 48%;">
+        <h4>Index-Based (NDWI)</h4>
+        <p>Uses the ratio of Green and NIR light to isolate water pixels.</p>
+        <div style="background: #343454; padding: 5px; font-family: monospace; color: white;">NDWI = (G - NIR) / (G + NIR)</div>
+      </div>
+      <div style="width: 48%;">
+        <h4>ML Classification</h4>
+        <p>Using <strong>Random Forest</strong> or <strong>SVM</strong> to classify pixels into:</p>
+        <ul>
+          <li>Open Water</li>
+          <li>Clear Ice</li>
+          <li>Snow-covered Ice</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <aside class="notes">
+    We use NDWI for spectral separation and Machine Learning for complex classification. Random Forest is particularly effective at distinguishing between snow-covered ice and actual snow on land, a common source of error in high-altitude RS studies.
+  </aside>
+</section>
+<section>
+  <h3>7. Handling Topographic Effects</h3>
+  <div style="font-size: 0.7em;">
+    <p>High relief in HMA causes "Mountain Shadows" that mimic water pixels:</p>
+    <ul>
+      <li><strong>Digital Elevation Model (DEM):</strong> SRTM or ASTER DEM integration.</li>
+      <li><strong>Shadow Masking:</strong> Calculating sun azimuth and zenith to mask shaded regions.</li>
+      <li><strong>Slope Correction:</strong> Adjusting reflectance values based on terrain angle.</li>
+      <li class="fragment"><strong>Outcome:</strong> Prevents false "Break-up" detection caused by seasonal shadow shifts.</li>
+    </ul>
+  </div>
+  <aside class="notes">
+    Deep shadows in the Himalayas mimic the low reflectance of water. By using DEMs and solar geometry, we mask these areas, ensuring that seasonal changes in shadow length aren't misidentified as changes in ice cover.
+  </aside>
+</section>
+<section>
+  <h3>8. Physical Phenomena: Ice Decay Mechanisms</h3>
+  <div style="font-size: 0.7em;">
+    <div style="display: flex; justify-content: space-between;">
+      <div style="width: 48%;">
+        <h4>Thermal Decay</h4>
+        <ul>
+          <li>Solar radiation penetrates ice, causing internal melting.</li>
+          <li><strong>Candling:</strong> Vertical crystals separate, weakening the structure even if the ice remains thick.</li>
+        </ul>
+      </div>
+      <div style="width: 48%;">
+        <h4>Mechanical Decay</h4>
+        <ul>
+          <li><strong>Wind Forcing:</strong> Kinetic energy breaks weakened ice sheets.</li>
+          <li><strong>Albedo Reduction:</strong> Melt ponds form on surface, lowering albedo and accelerating heat absorption.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <aside class="notes">
+    The "Break-up" period involves both thermal and mechanical decay. Internal melting, known as candling, can make ice dangerous even when it looks solid. Wind plays a secondary but vital role by physically breaking up these weakened sheets and moving them toward the warmer shores.
+  </aside>
+</section>
+<section>
+  <h3>9. Data Fusion & Time-Series Smoothing</h3>
+  <div style="font-size: 0.7em;">
+    <p>Constructing a continuous "Ice Fraction" curve:</p>
+    <ul>
+      <li><strong>Savitzky-Golay Filter:</strong> Smoothing noise in the daily MODIS time-series.</li>
+      <li><strong>Sigmoid Function Fitting:</strong> Mathematically defining the FUS, FUE, BUS, and BUE dates.</li>
+      <li><strong>SAR Integration:</strong> Replacing cloud-masked optical pixels with SAR-derived ice states.</li>
+    </ul>
+  </div>
+  <aside class="notes">
+    We smooth noisy daily data using the Savitzky-Golay filter and then fit a Sigmoid function. This curve provides a mathematical "inflection point," allowing us to identify transition dates with much higher precision than manual inspection.
+  </aside>
+</section>
+<section>
+  <h3>10. Validation via High-Resolution Imagery</h3>
+  <div style="font-size: 0.7em;">
+    <p>Ensuring accuracy in the absence of ground stations:</p>
+    <ul>
+      <li><strong>PlanetScope/SkySat:</strong> Using sub-meter resolution imagery for specific case studies.</li>
+      <li><strong>Manual Digitization:</strong> Creating "Gold Standard" masks for 10% of the dataset.</li>
+      <li><strong>Error Metrics:</strong> Calculating Root Mean Square Error (RMSE) and Mean Absolute Error (MAE) between automated and manual dates.</li>
+    </ul>
+  </div>
+  <aside class="notes">
+    Validation is the "ground truth" step. We use sub-meter imagery from commercial satellites to verify our automated results, calculating RMSE to ensure our model's uncertainty is within acceptable scientific limits.
+  </aside>
+</section>
+<section>
+  <h3>11. Reporting & Statistical Analysis</h3>
+  <div style="font-size: 0.7em;">
+    <table style="width: 100%;">
+      <thead>
+        <tr>
+          <th>Analysis</th>
+          <th>Technique</th>
+          <th>Goal</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Trend Test</strong></td>
+          <td>Mann-Kendall</td>
+          <td>Confirm if melt is getting earlier over 20 years.</td>
+        </tr>
+        <tr>
+          <td><strong>Magnitude</strong></td>
+          <td>Theil-Sen Slope</td>
+          <td>Quantify rate of change (e.g., days per decade).</td>
+        </tr>
+        <tr>
+          <td><strong>Climatic Driver</strong></td>
+          <td>ERA5 Correlation</td>
+          <td>Linking ice duration to Air Temperature anomalies.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <aside class="notes">
+    We use the Mann-Kendall test for trend significance and Theil-Sen for the rate of change. Finally, we correlate these with ERA5 reanalysis data to see how closely lake ice mirrors global warming signals.
+  </aside>
+</section>
+<section>
+  <h3>Summary: Why RS-Focus?</h3>
+  <div style="font-size: 0.75em;">
+    <ul>
+      <li><strong>Scalability:</strong> Monitor 500+ lakes across the Himalayas simultaneously.</li>
+      <li><strong>Practicality:</strong> Entirely implementable in Python/Google Colab.</li>
+      <li><strong>Impact:</strong> Directly visualizes the "shrinking cryosphere" using real evidence.</li>
+      <li><strong>BTP Value:</strong> Demonstrates high proficiency in Geospatial Big Data.</li>
+    </ul>
+  </div>
+  <aside class="notes">
+    Remote Sensing is the most practical path for this BTP. It allows large-scale analysis, can be performed in the cloud, and demonstrates advanced data science skills highly valued in academia and industry.
+  </aside>
+</section>
+
+    </div>
+  </div>
+
+  <script src="/reveal/dist/reveal.js"></script>
+  <script src="/reveal/plugin/notes/notes.js"></script>
+  <script src="/reveal/plugin/markdown/markdown.js"></script>
+  <script src="/reveal/plugin/highlight/highlight.js"></script>
+  <script src="/reveal/plugin/math/math.js"></script>
+  <script>
+    // More info about initialization & config:
+    // - https://revealjs.com/initialization/
+    // - https://revealjs.com/config/
+    Reveal.initialize({
+      hash: true,
+      showHiddenSlides: true,
+
+      slideNumber: 'c/t',
+
+      // Learn about plugins: https://revealjs.com/plugins/
+      plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
+    });
+  </script>
+</body>
+</html>
